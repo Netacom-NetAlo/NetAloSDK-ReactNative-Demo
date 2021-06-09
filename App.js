@@ -33,13 +33,13 @@ const App = () => {
             <TouchableOpacity
               style={[styles.button]}
               onPress={() => {
-                NetAloSDK.setUser(
-                  "281474977755108",
-                  "9a0c2c258c4edb30ce63fa4c56070a681464e5d8",
-                  "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
-                  "XX",
-                  "+84969143732"
-                );
+                  NetAloSDK.setUser(
+                      "281474977634835",
+                      "2abd7bb7bfe36b9e7059eb1d3e1929405623ad2d",
+                      "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
+                      "p005",
+                      "+84101143005"
+                  );
                 setShouldShowB(!shouldShowB);
               }}
             >
@@ -84,7 +84,7 @@ const App = () => {
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                "281474977755108",
+                "281474977634835",
                 "9a0c2c258c4edb30ce63fa4c56070a681464e5d8"
               )
             }

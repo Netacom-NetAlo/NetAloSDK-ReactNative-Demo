@@ -1,8 +1,7 @@
 
 #import "RCTNetAloSDK.h"
 #import "AppDelegate.h"
-#import "TestReactNativeV3-Swift.h"
-
+#import "TestReactNativeV4-Swift.h"
 
 @interface RCTNetAloSDK()
 
@@ -30,13 +29,18 @@
 }
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(setUser: (int64_t) userId
+RCT_EXPORT_METHOD(setUser: (NSString *) userId
                   session: (NSString *)session
                   avatarId: (NSString *)avatarId
                   fullName: (NSString *)fullName
                   phoneNumber: (NSString *)phoneNumber)
 {
-  [AppDelegate.sharedInstance.sdk setUserWithUserId:userId fullName:fullName userSession:session avatarId:avatarId phoneNumber:phoneNumber];
+  NSLog(@"%@", userId);
+  NSLog(@"%@", session);
+  NSLog(@"%@", avatarId);
+  NSLog(@"%@", fullName);
+  NSLog(@"%@", phoneNumber);
+  [AppDelegate.sharedInstance.sdk setUserWithUserId:[userId integerValue] fullName:fullName userSession:session avatarId:avatarId phoneNumber:phoneNumber];
 }
 
 RCT_EXPORT_METHOD(showListConversations)
@@ -49,13 +53,13 @@ RCT_EXPORT_METHOD(showListConversations)
   [rootVC presentViewController:navigation animated:YES completion:nil];
 }
 
-RCT_EXPORT_METHOD(showChatWithUser: (int64_t) userId
+RCT_EXPORT_METHOD(showChatWithUser: (NSString *) userId
                   avatarId: (NSString *)avatarId
                   fullName: (NSString *)fullName
                   phoneNumber: (NSString *)phoneNumber)
 {
   
-  MockNetAloUser *user = [[MockNetAloUser alloc] initWithId:userId phoneNumber:phoneNumber email:@"" fullName:fullName avatarUrl:avatarId session:@""];
+  MockNetAloUser *user = [[MockNetAloUser alloc] initWithId:[userId integerValue] phoneNumber:phoneNumber email:@"" fullName:fullName avatarUrl:avatarId session:@""];
   UIViewController *rootVC = UIApplication.sharedApplication.keyWindow.rootViewController;
   UIViewController *vc = [AppDelegate.sharedInstance.sdk buildChatViewController:user type:3];
 
@@ -77,6 +81,21 @@ RCT_EXPORT_METHOD(showChatWithPhone: (NSString *) phoneNumber)
     [rootVC presentViewController:navigation animated:YES completion:nil];
   }
 }
+
+RCT_EXPORT_METHOD(openChatWithUser: (NSString *)userId
+                  fullName: (NSString *)fullName)
+{
+  
+  MockNetAloUser *user = [[MockNetAloUser alloc] initWithId:[userId integerValue] phoneNumber:@"" email:@"" fullName:fullName avatarUrl:@"" session:@""];
+  UIViewController *rootVC = UIApplication.sharedApplication.keyWindow.rootViewController;
+  UIViewController *vc = [AppDelegate.sharedInstance.sdk buildChatViewController:user type:3];
+
+  UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
+  [navigation setNavigationBarHidden:YES];
+  [navigation setModalPresentationStyle:UIModalPresentationFullScreen];
+  [rootVC presentViewController:navigation animated:YES completion:nil];
+}
+
 
 @end
   

@@ -1,41 +1,58 @@
-source 'https://github.com/CocoaPods/Specs.git'
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-# Required for Swift apps
+plugin 'cocoapods-user-defined-build-types'
+enable_user_defined_build_types!
+
 platform :ios, '10.0'
-use_frameworks!
 
-def netalo_pods
-  # use_modular_headers!
-  use_frameworks!
+target 'TestReactNativeV4' do
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
+
+  target 'TestReactNativeV4Tests' do
+    inherit! :complete
+    # Pods for testing
+  end
   
-  pod 'MessageKit', :git => 'http://gitlab.ecdc.vn/hieubui/nt-messagekit'
-  pod 'Localize-Swift', :git => 'http://gitlab.ecdc.vn/hieubui/nt-Localize-Swift'
-  pod 'Kingfisher', '~> 5.15'
-  pod 'ReSwift', '~> 4.1.1'
-  pod 'ReSwiftThunk', git: 'https://github.com/thanhphong-tran/ReSwift-Thunk.git', :tag => '1.1.1'
-  pod 'SwipeTransition', '~> 0.4.2'
-  pod 'GoogleWebRTC', '~> 1.1'
+  # use_frameworks!
+  
+  pod 'MessageKit', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/messagekit'
+  pod 'Localize-Swift', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/Localize-Swift'
+  pod 'Kingfisher', '~> 5.15', :build_type => :dynamic_framework
+  pod 'ReSwift', '~> 4.1.1', :build_type => :dynamic_framework
+  pod 'ReSwiftThunk', :build_type => :dynamic_framework, git: 'https://github.com/thanhphong-tran/ReSwift-Thunk.git', :tag => '1.1.1'
+  pod 'SwipeTransition', '~> 0.4.2', :build_type => :dynamic_framework
+  pod 'GoogleWebRTC', '~> 1.1', :build_type => :dynamic_framework
   # Local database
-  pod 'Realm', '5.3.5'
-  pod 'RealmSwift', '5.3.5'
-  pod 'Reachability', '~> 3.2'
+  pod 'Realm', '5.3.5', :build_type => :dynamic_framework
+  pod 'RealmSwift', '5.3.5', :build_type => :dynamic_framework
+  pod 'Reachability', '~> 3.2', :build_type => :dynamic_framework
   # Localization 2.0
-  pod 'ZIPFoundation', '~> 0.9'
+  pod 'ZIPFoundation', '~> 0.9', :build_type => :dynamic_framework
   # Secret chat
-  pod 'SignalCoreKit', git: 'https://github.com/signalapp/SignalCoreKit.git'
-  pod 'AxolotlKit', git: 'https://github.com/signalapp/SignalProtocolKit.git', branch: 'master'
-  pod 'HKDFKit', git: 'https://github.com/signalapp/HKDFKit.git'
-  pod 'Curve25519Kit', git: 'https://github.com/signalapp/Curve25519Kit'
-  pod 'GRKOpenSSLFramework', git: 'https://github.com/signalapp/GRKOpenSSLFramework', branch: 'mkirk/1.0.2t'
-  pod 'Socket.IO-Client-Swift', '14.0.0'
+  pod 'SignalCoreKit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/SignalCoreKit.git'
+  pod 'AxolotlKit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/SignalProtocolKit.git', branch: 'master'
+  pod 'HKDFKit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/HKDFKit.git'
+  pod 'Curve25519Kit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/Curve25519Kit'
+  pod 'GRKOpenSSLFramework', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/GRKOpenSSLFramework', branch: 'mkirk/1.0.2t'
+  pod 'Socket.IO-Client-Swift', '14.0.0', :build_type => :dynamic_framework
 #  pod 'NetaloCommonSDK', :path => '/Users/phong/Desktop/IOS/NetaloCommonSDK'
-  pod 'NetaloCommonSDK', :git => 'http://gitlab.ecdc.vn/hieubui/NetaloCommonSDK', branch: 'lomo-v12'
+#  pod 'NetaloCommonSDK', :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'simulator'
+  pod 'NetaloCommonSDK', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'medi-hub'
   
-end
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable the next line.
+  # use_flipper!()
 
-# The target name is most likely the name of your project.
-target 'TestReactNativeV3' do
-
-  netalo_pods
-  
+  post_install do |installer|
+    react_native_post_install(installer)
+  end
 end
