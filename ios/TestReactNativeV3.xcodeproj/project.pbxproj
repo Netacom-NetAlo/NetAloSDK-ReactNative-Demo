@@ -689,9 +689,9 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = HWM2C344BE;
+						DevelopmentTeam = GL8S7376EK;
 						LastSwiftMigration = 1230;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1111,9 +1111,9 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
-				"${PODS_ROOT}/../../../NetaloCommonSDK/NetaloUISDK.framework",
-				"${PODS_ROOT}/../../../NetaloCommonSDK/NetaloCallSDK.framework",
-				"${PODS_ROOT}/../../../NetaloCommonSDK/NetaloSDK.framework",
+				"${PODS_ROOT}/NetaloCommonSDK/NetaloUISDK.framework",
+				"${PODS_ROOT}/NetaloCommonSDK/NetaloCallSDK.framework",
+				"${PODS_ROOT}/NetaloCommonSDK/NetaloSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwiftThunk/ReSwiftThunk.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
@@ -1240,10 +1240,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = HWM2C344BE;
+				DEVELOPMENT_TEAM = GL8S7376EK;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TestReactNativeV3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1253,9 +1254,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xutest02;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xutest02.test;
 				PRODUCT_NAME = TestReactNativeV3;
-				PROVISIONING_PROFILE_SPECIFIER = "real-xutest02";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestReactNativeV3-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1269,9 +1270,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HWM2C344BE;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TestReactNativeV3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1283,7 +1285,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xutest02;
 				PRODUCT_NAME = TestReactNativeV3;
-				PROVISIONING_PROFILE_SPECIFIER = "real-xutest02";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestReactNativeV3-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
