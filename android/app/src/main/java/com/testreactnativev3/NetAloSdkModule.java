@@ -32,7 +32,7 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public final void setUser(@Nullable String userId, @Nullable String token, @Nullable String avatar, @Nullable String phone, @Nullable String email) {
+    public final void setUser(@Nullable String userId, @Nullable String token, @Nullable String avatar, @Nullable String phone, @Nullable String email, @Nullable Boolean isAdmin) {
         Logger.INSTANCE.e("setNetAloUser=" + userId + ", token=" + token, new Object[0]);
         NeUser neUser = new NeUser();
         long userID;
@@ -43,6 +43,10 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
         }
         neUser.setId(userID);
         neUser.setToken(token);
+        neUser.setAvatar(avatar);
+        neUser.setPhone(phone);
+        neUser.setEmail(email);
+        neUser.setAdmin(isAdmin);
         NetAloSDK.INSTANCE.setNetAloUser(neUser);
     }
 
