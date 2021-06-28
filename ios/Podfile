@@ -36,7 +36,7 @@ target 'TestReactNativeV4' do
   # Localization 2.0
   pod 'ZIPFoundation', '~> 0.9', :build_type => :dynamic_framework
   # Secret chat
-  pod 'SignalCoreKit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/SignalCoreKit.git'
+  pod 'SignalCoreKit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/SignalCoreKit.git', :commit => 'eea6884e55261bf157ad6054c72c3c51d7788d4c'
   pod 'AxolotlKit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/SignalProtocolKit.git', branch: 'master'
   pod 'HKDFKit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/HKDFKit.git'
   pod 'Curve25519Kit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/Curve25519Kit'
