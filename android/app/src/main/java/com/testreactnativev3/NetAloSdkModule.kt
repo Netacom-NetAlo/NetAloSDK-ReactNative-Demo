@@ -17,9 +17,9 @@ class NetAloSdkModule internal constructor(private var reactContext: ReactApplic
     }
 
     @ReactMethod
-    fun setUser(userId: String?, token: String?, avatar: String?, phone: String?, email: String?,isAdmin: Boolean?) {
+    fun setUser(userId: String?, token: String?, avatar: String?, email: String?, phone: String?, isAdmin: Boolean?) {
         Logger.e("setNetAloUser=$userId, token=$token")
-        NetAloSDK.setNetAloUser(NeUser(id = userId?.toLong() ?: 0L, token = token, avatar = avatar, phone = phone, email = email, isAdmin = isAdmin))
+        NetAloSDK.setNetAloUser(NeUser(id = userId?.toLong() ?: 0L, token = token ?: "", avatar = avatar?: "", phone = phone?: "", email = email?: "", isAdmin = isAdmin?: true))
     }
 
     @ReactMethod
@@ -31,6 +31,6 @@ class NetAloSdkModule internal constructor(private var reactContext: ReactApplic
     @ReactMethod
     fun openChatWithUser(userId: String?, token: String?) {
         Logger.e("openChatWithUser=$userId, token=$token")
-        NetAloSDK.openNetAloSDK(reactContext.applicationContext, NeUser(id = userId?.toLong() ?: 0L, token = token))
+        NetAloSDK.openNetAloSDK(reactContext.applicationContext, NeUser(id = userId?.toLong() ?: 0L, token = token?: ""))
     }
 }
