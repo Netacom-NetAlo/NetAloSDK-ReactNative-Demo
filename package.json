@@ -6,7 +6,8 @@
     "start": "react-native start -- --reset-cache",
     "test": "jest",
     "ios": "react-native run-ios",
-    "android": "react-native run-android"
+    "android": "react-native run-android",
+    "android_first": "npx react-native run-android"
   },
   "dependencies": {
     "react": "17.0.2",
