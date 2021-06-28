@@ -37,8 +37,9 @@ const App = () => {
                   "281474977755108",
                   "9a0c2c258c4edb30ce63fa4c56070a681464e5d8",
                   "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
-                  "XX",
-                  "+84969143732"
+                  "+84969143732",
+                  "hvtoan.dev@gmail.com",
+                  false
                 );
                 setShouldShowB(!shouldShowB);
               }}
@@ -54,8 +55,9 @@ const App = () => {
                   "281474977755109",
                   "1f7a20742ef7c7a92decfb27fc9c465d1e6fc8bd",
                   "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
-                  "XX",
-                  "+84969143732"
+                  "+84969143732",
+                  "hvtoan.dev@gmail.com",
+                  true
                 );
                 setShouldShowA(!shouldShowA);
               }}
