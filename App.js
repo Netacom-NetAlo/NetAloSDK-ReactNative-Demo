@@ -33,13 +33,14 @@ const App = () => {
             <TouchableOpacity
               style={[styles.button]}
               onPress={() => {
-                  NetAloSDK.setUser(
-                      "281474977634835",
-                      "2abd7bb7bfe36b9e7059eb1d3e1929405623ad2d",
-                      "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
-                      "p005",
-                      "+84101143005"
-                  );
+                NetAloSDK.setUser(
+                  "281474977755108",
+                  "9a0c2c258c4edb30ce63fa4c56070a681464e5d8",
+                  "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
+                  "XX",
+                  "+84969143732",
+                  false
+                );
                 setShouldShowB(!shouldShowB);
               }}
             >
@@ -55,7 +56,8 @@ const App = () => {
                   "1f7a20742ef7c7a92decfb27fc9c465d1e6fc8bd",
                   "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
                   "XX",
-                  "+84969143732"
+                  "+84969143732",
+                  true
                 );
                 setShouldShowA(!shouldShowA);
               }}
