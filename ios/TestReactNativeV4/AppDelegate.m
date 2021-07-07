@@ -114,4 +114,9 @@ static void InitializeFlipper(UIApplication *application) {
   
 }
 
+- (void)checkChatFunctionsWith:(NSString * _Nonnull)userId {
+  
+}
+
+
 @end

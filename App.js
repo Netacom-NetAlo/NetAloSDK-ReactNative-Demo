@@ -39,7 +39,7 @@ const App = () => {
                   "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
                   "XX",
                   "+84969143732",
-                  false
+                  true
                 );
                 setShouldShowB(!shouldShowB);
               }}
@@ -57,7 +57,7 @@ const App = () => {
                   "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
                   "XX",
                   "+84969143732",
-                  true
+                  false
                 );
                 setShouldShowA(!shouldShowA);
               }}
