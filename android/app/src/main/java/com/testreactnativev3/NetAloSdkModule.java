@@ -32,8 +32,8 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public final void setUser(@Nullable String userId, @Nullable String token, @Nullable String avatar, @Nullable String email, @Nullable String phone, @Nullable Boolean isAdmin) {
-        Logger.INSTANCE.e("setNetAloUser=" + userId + ", token=" + token, new Object[0]);
+    public final void setUser(@Nullable String userId, @Nullable String token, @Nullable String userName, @Nullable String avatar, @Nullable String email, @Nullable String phone, @Nullable Boolean isAdmin) {
+        Logger.INSTANCE.e("setNetAloUser=" + userName + ", token=" + token, new Object[0]);
         NeUser neUser = new NeUser();
         long userID;
         if (userId != null) {
@@ -45,6 +45,9 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
         if (token != null) {
             neUser.setToken(token);
         }
+        if (userName != null) {
+            neUser.setUsername(userName);
+        }
         if (avatar != null) {
             neUser.setAvatar(avatar);
         }
@@ -55,7 +58,7 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
             neUser.setEmail(email);
         }
         if (isAdmin != null) {
-            neUser.setAdmin(isAdmin);
+           neUser.setAdmin(isAdmin);
         }
         NetAloSDK.INSTANCE.setNetAloUser(neUser);
     }
@@ -84,6 +87,16 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
             neUser.setToken(token);
         }
         NetAloSDK.INSTANCE.openNetAloSDK(context, neUser);
+    }
+
+    @ReactMethod
+    public final void finishSocket() {
+        NetAloSDK.INSTANCE.finishSocket();
+    }
+
+    @ReactMethod
+    public final void logOut() {
+        NetAloSDK.INSTANCE.logOut();
     }
 
     public NetAloSdkModule(@NotNull ReactApplicationContext reactContext) {

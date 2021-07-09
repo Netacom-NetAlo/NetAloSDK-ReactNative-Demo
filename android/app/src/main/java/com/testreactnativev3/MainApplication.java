@@ -8,6 +8,7 @@ import androidx.work.Configuration;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -19,6 +20,7 @@ import com.netacom.lite.sdk.AccountKey;
 import com.netacom.lite.sdk.AppID;
 import com.netacom.lite.sdk.AppKey;
 import com.netacom.lite.sdk.SdkConfig;
+import com.onesignal.OneSignal;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -145,10 +147,10 @@ public class MainApplication extends Application implements ReactApplication, Co
     }
 
     public MainApplication() {
-        int appId = AppID.NETALO_DEV;
-        String appKey = AppKey.NETALO_DEV;
-        String accountKey = AccountKey.NETALO_DEV;
-        boolean isSyncContact = false;
+        int appId = 11;
+        String appKey = "V5WIfKdRfNaqapNSRVCsVCjZ39pWidpq";
+        String accountKey = "11";
+        boolean isSyncContact = true;
         boolean hidePhone = false;
         boolean hideCreateGroup = false;
         boolean hideAddInfoInChat = false;

@@ -8,6 +8,7 @@
 
 import React, { Component, useState } from "react";
 import ReactNative from "react-native";
+import OneSignal from 'react-native-onesignal';
 import {
   StyleSheet,
   Text,
@@ -15,12 +16,18 @@ import {
   View,
   Button,
   TouchableOpacity,
+  TextInput
 } from "react-native";
+
 const { NetAloSDK } = ReactNative.NativeModules;
 
 const App = () => {
+  const [text, onChangeText] = React.useState("Useless Text");
   const [shouldShowA, setShouldShowA] = useState(false);
   const [shouldShowB, setShouldShowB] = useState(false);
+  OneSignal.setLogLevel(6, 0);
+  OneSignal.setAppId("9ace9559-83bc-4a60-a2df-f297bbf16a42");
+  
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
@@ -35,7 +42,8 @@ const App = () => {
               onPress={() => {
                 NetAloSDK.setUser(
                   "281474977755108",
-                  "9a0c2c258c4edb30ce63fa4c56070a681464e5d8",
+                  "21012d319f15bf0f2858c722e17ed30b2e1c70ba",
+                  "TestChangeUserNameA",
                   "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
                   "XX",
                   "+84969143732",
@@ -53,8 +61,9 @@ const App = () => {
               onPress={() => {
                 NetAloSDK.setUser(
                   "281474977755109",
-                  "1f7a20742ef7c7a92decfb27fc9c465d1e6fc8bd",
-                  "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
+                  "53fabd950b2514577aed89e42c5118d9aec13965",
+                  "TestChangeUserNameB",
+                  "338679d107904e0c77380ab0f2ea223c4af5fa4d",
                   "XX",
                   "+84969143732",
                   true
@@ -86,8 +95,8 @@ const App = () => {
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                "281474977755108",
-                "9a0c2c258c4edb30ce63fa4c56070a681464e5d8"
+                "281474977755109",
+                "53fabd950b2514577aed89e42c5118d9aec13965"
               )
             }
           >
@@ -100,14 +109,30 @@ const App = () => {
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                "281474977755109",
-                "1f7a20742ef7c7a92decfb27fc9c465d1e6fc8bd"
+                "281474977755108",
+                "22529a03555a3bedccc92dd4b9f1ecf78bb75c12"
               )
             }
           >
             <Text style={styles.title}>Open Chat With User</Text>
           </TouchableOpacity>
         ) : null}
+        <View style={styles.margin} />
+        <TouchableOpacity
+              style={[styles.button]}
+              onPress={() => {
+                NetAloSDK.logOut();
+              }}>
+               <Text style={styles.title}>LogOut</Text>
+            </TouchableOpacity>
+            <View style={styles.margin} />
+            {/* <TouchableOpacity
+              style={[styles.button]}
+              onPress={() => {
+                navigation.goBack()
+              }}>
+               <Text style={styles.title}>Back</Text>
+            </TouchableOpacity> */}
       </View>
     </SafeAreaView>
   );
@@ -157,6 +182,11 @@ const styles = StyleSheet.create({
   },
   marginButton: {
     height: 10,
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
   },
 });
 

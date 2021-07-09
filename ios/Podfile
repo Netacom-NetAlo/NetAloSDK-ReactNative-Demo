@@ -38,4 +38,6 @@ target 'TestReactNativeV3' do
 
   netalo_pods
   
+  pod 'react-native-onesignal', :path => '../node_modules/react-native-onesignal'
+
 end
