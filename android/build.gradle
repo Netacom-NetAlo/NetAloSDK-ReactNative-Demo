@@ -4,7 +4,7 @@ buildscript {
     ext {
         kotlin_version = '1.5.10'
         hilt_version = '2.37'
-        sdkNetAlo_version = '1.6.13'
+        sdkNetAlo_version = '1.6.17'
         buildToolsVersion = "30.0.3"
         minSdkVersion = 23
         compileSdkVersion = 30
@@ -15,18 +15,21 @@ buildscript {
         google()
         mavenCentral()
         jcenter()
+        gradlePluginPortal()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:4.2.1")
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.13.4'
+        classpath "com.google.gms:google-services:4.3.8"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:2.7.1"
     }
 }
 
 allprojects {
     repositories {
+        gradlePluginPortal()
         mavenCentral()
         maven {
             url("https://jitpack.io")

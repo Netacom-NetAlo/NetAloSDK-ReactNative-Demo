@@ -30,19 +30,20 @@
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(setUser: (NSString *) userId
-                  session: (NSString *)session
-                  avatarId: (NSString *)avatarId
+                  token: (NSString *)token
                   fullName: (NSString *)fullName
+                  avatarId: (NSString *)avatarId
+                  email: (NSString *)email
                   phoneNumber: (NSString *)phoneNumber
-                  canCreateGroup: (NSNumber * _Nonnull)canCreateGroup)
+                  isAdmin: (NSNumber * _Nonnull)isAdmin)
 {
   NSLog(@"%@", userId);
-  NSLog(@"%@", session);
+  NSLog(@"%@", token);
   NSLog(@"%@", avatarId);
   NSLog(@"%@", fullName);
   NSLog(@"%@", phoneNumber);
-  NSLog([canCreateGroup boolValue] ? @"Yes" : @"No");
-  [AppDelegate.sharedInstance.sdk setUserWithUserId:[userId integerValue] fullName:fullName userSession:session avatarId:avatarId phoneNumber:phoneNumber canCreateGroup:[canCreateGroup boolValue]];
+  NSLog([isAdmin boolValue] ? @"Yes" : @"No");
+  [AppDelegate.sharedInstance.sdk setUserWithUserId:[userId integerValue] fullName:fullName userSession:token avatarId:avatarId phoneNumber:phoneNumber canCreateGroup:[isAdmin boolValue]];
 }
 
 RCT_EXPORT_METHOD(showListConversations)

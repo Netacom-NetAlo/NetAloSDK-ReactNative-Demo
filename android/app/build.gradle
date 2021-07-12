@@ -123,6 +123,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -213,6 +216,7 @@ dependencies {
         implementation jscFlavor
     }
     implementation("com.facebook.react:react-native:0.64.2"){ force = true }  // From node_modules
+    implementation 'com.onesignal:OneSignal:4.4.0'
      //SDK
     debugImplementation "vn.netacom:NetAloFull-Dev:$sdkNetAlo_version" //(for dev)
     releaseImplementation "vn.netacom:NetAloFull:$sdkNetAlo_version" //(for production)
