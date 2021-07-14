@@ -44,7 +44,7 @@ target 'TestReactNativeV4' do
   pod 'Socket.IO-Client-Swift', '14.0.0', :build_type => :dynamic_framework
 # pod 'NetaloCommonSDK', :path => '/Users/phong/Desktop/IOS/NetaloCommonSDK'
 #  pod 'NetaloCommonSDK', :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'simulator'
-   pod 'NetaloCommonSDK', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'medi-hub-v2'
+   pod 'NetaloCommonSDK', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'medi-hub-v3'
   
   # Enables Flipper.
   #
