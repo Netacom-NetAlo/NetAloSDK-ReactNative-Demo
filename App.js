@@ -95,7 +95,7 @@ const App = () => {
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                "281474977755109",
+                "281474977755108",
                 "53fabd950b2514577aed89e42c5118d9aec13965"
               )
             }
@@ -109,7 +109,7 @@ const App = () => {
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                "281474977755108",
+                "281474977755109",
                 "22529a03555a3bedccc92dd4b9f1ecf78bb75c12"
               )
             }

@@ -99,6 +99,11 @@ RCT_EXPORT_METHOD(openChatWithUser: (NSString *)userId
   [rootVC presentViewController:navigation animated:YES completion:nil];
 }
 
+RCT_EXPORT_METHOD(logOut)
+{
+//  [AppDelegate.sharedInstance.sdk logout];
+}
+
 
 @end
   
