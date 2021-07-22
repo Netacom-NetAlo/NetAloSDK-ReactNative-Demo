@@ -33,7 +33,7 @@ static void InitializeFlipper(UIApplication *application) {
 {
   self = [super init];
   if (self) {
-    _sdk = [[NetaloUISDK alloc] initWithAppId:1 appKey:@"appkey" accountKey:@"accountKey" appGroupIdentifier:@"group.com.xutest02" enviroment:1];
+    _sdk = [[NetaloUISDK alloc] initWithAppId:11 appKey:@"V5WIfKdRfNaqapNSRVCsVCjZ39pWidpq" accountKey:@"11" appGroupIdentifier:@"group.com.xutest02" enviroment:1];
     [_sdk addWithDelegate:self];
   }
   return self;
