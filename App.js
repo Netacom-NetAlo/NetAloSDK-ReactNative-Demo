@@ -7,7 +7,7 @@
  */
 
 import React, { Component, useState } from "react";
-import ReactNative from "react-native";
+import { NativeModules } from "react-native";
 import OneSignal from 'react-native-onesignal';
 import {
   StyleSheet,
@@ -19,7 +19,7 @@ import {
   TextInput
 } from "react-native";
 
-const { NetAloSDK } = ReactNative.NativeModules;
+const { NetAloSDK } = NativeModules;
 
 const App = () => {
   const [text, onChangeText] = React.useState("Useless Text");
@@ -82,14 +82,24 @@ const App = () => {
           <View>
             <TouchableOpacity
               style={[styles.button]}
-              onPress={() => NetAloSDK.showListConversations()}
+              onPress={() => NetAloSDK.showListConversations(false, [])}
+            >
+              <Text style={styles.title}>List Conversations Create Group</Text>
+            </TouchableOpacity>
+            <View style={styles.margin} />
+          </View>
+        ) : null}
+        {shouldShowA || shouldShowB ? (
+          <View>
+            <TouchableOpacity
+              style={[styles.button]}
+              onPress={() => NetAloSDK.showListConversations(true, [1, 2, 3, 4, 5])}
             >
               <Text style={styles.title}>Show List Conversations</Text>
             </TouchableOpacity>
             <View style={styles.margin} />
           </View>
         ) : null}
-
         {shouldShowA ? (
           <TouchableOpacity
             style={[styles.button]}

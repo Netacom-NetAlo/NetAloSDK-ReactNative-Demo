@@ -5,6 +5,7 @@ import android.content.Context;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableArray;
 import com.netacom.base.chat.logger.Logger;
 import com.netacom.full.ui.sdk.NetAloSDK;
 import com.netacom.lite.entity.socket.Call;
@@ -13,7 +14,10 @@ import com.netacom.lite.entity.ui.user.NeUser;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import kotlin.jvm.internal.Intrinsics;
@@ -33,7 +37,7 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public final void setUser(@Nullable String userId, @Nullable String token, @Nullable String userName, @Nullable String avatar, @Nullable String email, @Nullable String phone, @Nullable Boolean isAdmin) {
-        Logger.INSTANCE.e("setNetAloUser=" + userName + ", token=" + token, new Object[0]);
+        Logger.INSTANCE.e("setNetAloUser=" + userName + ", token=" + token + ", username=" + userName, new Object[0]);
         NeUser neUser = new NeUser();
         long userID;
         if (userId != null) {
@@ -64,15 +68,15 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public final void showListConversations() {
+    public final void showListConversations(@Nullable Boolean isHideCreateGroup, @Nullable ReadableArray types) {
         Logger.INSTANCE.e("openChatConversation", new Object[0]);
         Context context = this.reactContext.getApplicationContext();
-        NetAloSDK.INSTANCE.openNetAlo(context, (NeUser) null, (Call) null, false);
+        NetAloSDK.INSTANCE.openNetAloSDK(context, (Boolean) isHideCreateGroup,(ArrayList) types.toArrayList(), (NeUser) null, (Call) null, (Boolean) false);
     }
 
     @ReactMethod
-    public final void openChatWithUser(@Nullable String userId, @Nullable String token) {
-        Logger.INSTANCE.e("openChatWithUser=" + userId + ", token=" + token, new Object[0]);
+    public final void openChatWithUser(@Nullable String userId, @Nullable String username) {
+        Logger.INSTANCE.e("openChatWithUser=" + userId + ", username=" + username, new Object[0]);
         Context context = this.reactContext.getApplicationContext();
         Intrinsics.checkNotNullExpressionValue(context, "reactContext.applicationContext");
         NeUser neUser = new NeUser();
@@ -83,10 +87,10 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
             userID = 0L;
         }
         neUser.setId(userID);
-        if (token != null) {
-            neUser.setToken(token);
+        if (username != null) {
+            neUser.setUsername(username);
         }
-        NetAloSDK.INSTANCE.openNetAloSDK(context, neUser);
+        NetAloSDK.INSTANCE.openNetAloSDK(context, (Boolean) false,(ArrayList) null, (NeUser) neUser, (Call) null, (Boolean) false);
     }
 
     @ReactMethod
