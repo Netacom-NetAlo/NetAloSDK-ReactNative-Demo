@@ -93,7 +93,7 @@ const App = () => {
           <View>
             <TouchableOpacity
               style={[styles.button]}
-              onPress={() => NetAloSDK.showListConversations(true, [1, 2, 3, 4, 5])}
+              onPress={() => NetAloSDK.showListConversations(true, [1, 2, 4, 5])}
             >
               <Text style={styles.title}>Show List Conversations</Text>
             </TouchableOpacity>
