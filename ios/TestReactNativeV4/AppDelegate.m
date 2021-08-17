@@ -134,6 +134,9 @@ static void InitializeFlipper(UIApplication *application) {
   
 }
 
+- (void)didPressedWithUrl:(NSString * _Nonnull)url {
+  
+}
 
 // MARK: - Utils
 - (UIViewController *)topViewController{

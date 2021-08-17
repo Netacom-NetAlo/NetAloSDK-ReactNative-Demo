@@ -46,7 +46,8 @@ RCT_EXPORT_METHOD(setUser: (NSString *) userId
   [AppDelegate.sharedInstance.sdk setUserWithUserId:[userId integerValue] fullName:fullName userSession:token avatarId:avatarId phoneNumber:phoneNumber canCreateGroup:[isAdmin boolValue]];
 }
 
-RCT_EXPORT_METHOD(showListConversations)
+RCT_EXPORT_METHOD(showListConversations: (NSNumber * _Nonnull)isAdmin
+                  groupTypes: (NSArray *)groupTypes)
 {
   UIViewController *rootVC = UIApplication.sharedApplication.keyWindow.rootViewController;
   UIViewController *vc = [AppDelegate.sharedInstance.sdk buildConversationViewController];
