@@ -80,6 +80,24 @@
 		<data>
 		XQjHgHa7y4/50H6YQtyCTpulkN4=
 		</data>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CzmX659IsxkomSebOWpsLwpNBu8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>vi.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			3TW9PghU48Yi0m/JhMjBcdSlzis=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -280,6 +298,32 @@
 			<data>
 			KX7+lk7IXLVnFXW5HkYbKtI/BxYYDil2qBnN+GNqMAI=
 			</data>
+		</dict>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CzmX659IsxkomSebOWpsLwpNBu8=
+			</data>
+			<key>hash2</key>
+			<data>
+			a/OByPJ1D5gk7gAnnd4bDuKnPWRAXfgsFZNLT3/3O6M=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>vi.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			3TW9PghU48Yi0m/JhMjBcdSlzis=
+			</data>
+			<key>hash2</key>
+			<data>
+			JvIlFG1BhRZSK+R/FeRpc38EoqrEvXpY+VVsyJSmSD4=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>rules</key>
