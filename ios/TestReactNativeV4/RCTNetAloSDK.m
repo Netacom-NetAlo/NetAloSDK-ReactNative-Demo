@@ -49,8 +49,16 @@ RCT_EXPORT_METHOD(setUser: (NSString *) userId
 RCT_EXPORT_METHOD(showListConversations: (NSNumber * _Nonnull)isAdmin
                   groupTypes: (NSArray *)groupTypes)
 {
+  // GroupTypes:
+  //case unknown        = 0     // Due to server define
+  //case privateGroup   = 1     // Secret group
+  //case group          = 2     // Group more than 1vs1
+  //case publicGroup    = 3     // The chat conversation 1vs1
+  //case officalAccount = 5     // Offical Account
   UIViewController *rootVC = UIApplication.sharedApplication.keyWindow.rootViewController;
-  UIViewController *vc = [AppDelegate.sharedInstance.sdk buildConversationViewController];
+  UIViewController *vc = [AppDelegate.sharedInstance.sdk
+                          buildConversationViewControllerWithCanCreateGroup:[isAdmin boolValue]
+                          filterGroupTypes:groupTypes];
   UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
   [navigation setNavigationBarHidden:YES];
   [navigation setModalPresentationStyle:UIModalPresentationFullScreen];

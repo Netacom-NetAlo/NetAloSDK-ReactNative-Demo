@@ -138,6 +138,10 @@ static void InitializeFlipper(UIApplication *application) {
   
 }
 
+- (void)didClose {
+  
+}
+
 // MARK: - Utils
 - (UIViewController *)topViewController{
   return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
