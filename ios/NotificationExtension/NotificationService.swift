@@ -6,7 +6,6 @@
 //
 
 import UserNotifications
-import NetAloNotificationService
 
 class NotificationService: UNNotificationServiceExtension {
 
