@@ -8,7 +8,7 @@
 
 import React, { Component, useState } from "react";
 import { NativeModules } from "react-native";
-import OneSignal from 'react-native-onesignal';
+// import OneSignal from 'react-native-onesignal';
 import {
   StyleSheet,
   Text,
@@ -25,9 +25,9 @@ const App = () => {
   const [text, onChangeText] = React.useState("Useless Text");
   const [shouldShowA, setShouldShowA] = useState(false);
   const [shouldShowB, setShouldShowB] = useState(false);
-  OneSignal.setLogLevel(6, 0);
-  OneSignal.setAppId("9ace9559-83bc-4a60-a2df-f297bbf16a42");
-  
+  // OneSignal.setLogLevel(6, 0);
+  // OneSignal.setAppId("9ace9559-83bc-4a60-a2df-f297bbf16a42");
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
@@ -129,14 +129,14 @@ const App = () => {
         ) : null}
         <View style={styles.margin} />
         <TouchableOpacity
-              style={[styles.button]}
-              onPress={() => {
-                NetAloSDK.logOut();
-              }}>
-               <Text style={styles.title}>LogOut</Text>
-            </TouchableOpacity>
-            <View style={styles.margin} />
-            {/* <TouchableOpacity
+          style={[styles.button]}
+          onPress={() => {
+            NetAloSDK.logOut();
+          }}>
+          <Text style={styles.title}>LogOut</Text>
+        </TouchableOpacity>
+        <View style={styles.margin} />
+        {/* <TouchableOpacity
               style={[styles.button]}
               onPress={() => {
                 navigation.goBack()

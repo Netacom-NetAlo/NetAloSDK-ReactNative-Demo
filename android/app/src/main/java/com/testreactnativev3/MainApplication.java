@@ -8,7 +8,6 @@ import androidx.work.Configuration;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -20,7 +19,6 @@ import com.netacom.lite.sdk.AccountKey;
 import com.netacom.lite.sdk.AppID;
 import com.netacom.lite.sdk.AppKey;
 import com.netacom.lite.sdk.SdkConfig;
-import com.onesignal.OneSignal;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -38,27 +36,27 @@ public class MainApplication extends Application implements ReactApplication, Co
     @Inject
     NetAloSdkCore netAloSdkCore;
 
-    private final ReactNativeHost mReactNativeHost =
-            new ReactNativeHost(this) {
-                @Override
-                public boolean getUseDeveloperSupport() {
-                    return BuildConfig.DEBUG;
-                }
+    private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+        @Override
+        public boolean getUseDeveloperSupport() {
+            return BuildConfig.DEBUG;
+        }
 
-                @Override
-                protected List<ReactPackage> getPackages() {
-                    @SuppressWarnings("UnnecessaryLocalVariable")
-                    List<ReactPackage> packages = new PackageList(this).getPackages();
-                    // Packages that cannot be autolinked yet can be added manually here, for example:
-                    packages.add(new NetAloSdkPackage());
-                    return packages;
-                }
+        @Override
+        protected List<ReactPackage> getPackages() {
+            @SuppressWarnings("UnnecessaryLocalVariable")
+            List<ReactPackage> packages = new PackageList(this).getPackages();
+            // Packages that cannot be autolinked yet can be added manually here, for
+            // example:
+            packages.add(new NetAloSdkPackage());
+            return packages;
+        }
 
-                @Override
-                protected String getJSMainModuleName() {
-                    return "index";
-                }
-            };
+        @Override
+        protected String getJSMainModuleName() {
+            return "index";
+        }
+    };
 
     @Override
     public ReactNativeHost getReactNativeHost() {
@@ -66,23 +64,23 @@ public class MainApplication extends Application implements ReactApplication, Co
     }
 
     /**
-     * Loads Flipper in React Native templates. Call this in the onCreate method with something like
-     * initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+     * Loads Flipper in React Native templates. Call this in the onCreate method
+     * with something like initializeFlipper(this,
+     * getReactNativeHost().getReactInstanceManager());
      *
      * @param context
      * @param reactInstanceManager
      */
-    private static void initializeFlipper(
-            Context context, ReactInstanceManager reactInstanceManager) {
+    private static void initializeFlipper(Context context, ReactInstanceManager reactInstanceManager) {
         if (BuildConfig.DEBUG) {
             try {
-        /*
-         We use reflection here to pick up the class that initializes Flipper,
-        since Flipper library is not available in release mode
-        */
+                /*
+                 * We use reflection here to pick up the class that initializes Flipper, since
+                 * Flipper library is not available in release mode
+                 */
                 Class<?> aClass = Class.forName("com.awesomeproject.ReactNativeFlipper");
-                aClass.getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
-                        .invoke(null, context, reactInstanceManager);
+                aClass.getMethod("initializeFlipper", Context.class, ReactInstanceManager.class).invoke(null, context,
+                        reactInstanceManager);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (NoSuchMethodException e) {
@@ -95,7 +93,7 @@ public class MainApplication extends Application implements ReactApplication, Co
         }
     }
 
-    //Init SDK
+    // Init SDK
     private final SdkConfig sdkConfig;
     private final NeTheme sdkTheme;
 
@@ -136,7 +134,7 @@ public class MainApplication extends Application implements ReactApplication, Co
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
         initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
-        //SDK
+        // SDK
         NetAloSDK netAloSDK = NetAloSDK.INSTANCE;
         Application application = this;
         NetAloSdkCore netAloSdkCore = this.netAloSdkCore;
@@ -147,9 +145,18 @@ public class MainApplication extends Application implements ReactApplication, Co
     }
 
     public MainApplication() {
-        int appId = 11;
-        String appKey = "V5WIfKdRfNaqapNSRVCsVCjZ39pWidpq";
-        String accountKey = "11";
+        int appId;
+        String appKey;
+        String accountKey;
+        if (BuildConfig.DEBUG) {
+            appId = AppID.WELLSPRING_DEV;
+            appKey = AppKey.WELLSPRING_DEV;
+            accountKey = AccountKey.WELLSPRING_DEV;
+        } else {
+            appId = AppID.WELLSPRING_PROD;
+            appKey = AppKey.WELLSPRING_PROD;
+            accountKey = AccountKey.WELLSPRING_PROD;
+        }
         boolean isSyncContact = true;
         boolean hidePhone = false;
         boolean hideCreateGroup = false;

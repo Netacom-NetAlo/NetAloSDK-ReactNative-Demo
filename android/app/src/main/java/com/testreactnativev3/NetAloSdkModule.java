@@ -10,9 +10,10 @@ import com.netacom.base.chat.logger.Logger;
 import com.netacom.full.ui.sdk.NetAloSDK;
 import com.netacom.lite.entity.socket.Call;
 import com.netacom.lite.entity.ui.user.NeUser;
-
+import com.netacom.lite.network.model.response.SettingResponse;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import com.netacom.lite.config.EndPoint;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -36,7 +37,8 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public final void setUser(@Nullable String userId, @Nullable String token, @Nullable String userName, @Nullable String avatar, @Nullable String email, @Nullable String phone, @Nullable Boolean isAdmin) {
+    public final void setUser(@Nullable String userId, @Nullable String token, @Nullable String userName,
+            @Nullable String avatar, @Nullable String email, @Nullable String phone, @Nullable Boolean isAdmin) {
         Logger.INSTANCE.e("setNetAloUser=" + userName + ", token=" + token + ", username=" + userName, new Object[0]);
         NeUser neUser = new NeUser();
         long userID;
@@ -62,7 +64,7 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
             neUser.setEmail(email);
         }
         if (isAdmin != null) {
-           neUser.setAdmin(isAdmin);
+            neUser.setAdmin(isAdmin);
         }
         NetAloSDK.INSTANCE.setNetAloUser(neUser);
     }
@@ -71,7 +73,8 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
     public final void showListConversations(@Nullable Boolean isHideCreateGroup, @Nullable ReadableArray types) {
         Logger.INSTANCE.e("openChatConversation", new Object[0]);
         Context context = this.reactContext.getApplicationContext();
-        NetAloSDK.INSTANCE.openNetAloSDK(context, (Boolean) isHideCreateGroup,(ArrayList) types.toArrayList(), (NeUser) null, (Call) null, (Boolean) false);
+        NetAloSDK.INSTANCE.openNetAloSDK(context, (Boolean) isHideCreateGroup, (ArrayList) types.toArrayList(),
+                (NeUser) null, (Call) null, (Boolean) false);
     }
 
     @ReactMethod
@@ -90,7 +93,8 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
         if (username != null) {
             neUser.setUsername(username);
         }
-        NetAloSDK.INSTANCE.openNetAloSDK(context, (Boolean) false,(ArrayList) null, (NeUser) neUser, (Call) null, (Boolean) false);
+        NetAloSDK.INSTANCE.openNetAloSDK(context, (Boolean) false, (ArrayList) null, (NeUser) neUser, (Call) null,
+                (Boolean) false);
     }
 
     @ReactMethod
@@ -101,6 +105,13 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public final void logOut() {
         NetAloSDK.INSTANCE.logOut();
+    }
+
+    @ReactMethod
+    public final void setDomainLoadAvatarNetAloSdk() {
+        SettingResponse settingResponse = new SettingResponse();
+        //settingResponse.cdnEndpointSdk = "";
+        NetAloSDK.INSTANCE.initSetting(settingResponse);
     }
 
     public NetAloSdkModule(@NotNull ReactApplicationContext reactContext) {

@@ -2,28 +2,29 @@
 
 buildscript {
     ext {
-        kotlin_version = '1.5.10'
+        kotlin_version = '1.5.30'
         hilt_version = '2.38.1'
-        sdkNetAlo_version = '2.0.03'
+        sdkNetAlo_version = '2.0.07'
         buildToolsVersion = "30.0.3"
         minSdkVersion = 23
-        compileSdkVersion = 31
+        compileSdkVersion = 30
         targetSdkVersion = 29
         supportLibVersion = "30.0.3"
     }
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
         jcenter()
         gradlePluginPortal()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.2.1")
+        classpath("com.android.tools.build:gradle:4.2.2")
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
-        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.13.4'
+//        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.13.4'
         classpath "com.google.gms:google-services:4.3.8"
-        classpath "com.google.firebase:firebase-crashlytics-gradle:2.7.1"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:2.5.2"
     }
 }
 
