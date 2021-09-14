@@ -42,9 +42,10 @@ target 'TestReactNativeV4' do
   pod 'Curve25519Kit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/Curve25519Kit'
   pod 'GRKOpenSSLFramework', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/GRKOpenSSLFramework', branch: 'mkirk/1.0.2t'
   pod 'Socket.IO-Client-Swift', '14.0.0', :build_type => :dynamic_framework
-# pod 'NetaloCommonSDK', :path => '/Users/phong/Desktop/IOS/NetaloCommonSDK'
+#  pod 'NetaloCommonSDK', :path => '/Users/phong/Desktop/IOS/NetaloCommonSDK'
+#  pod 'NetAloNotificationService', :path => '/Users/phong/Desktop/IOS/NetAloNotificationService'
 #  pod 'NetaloCommonSDK', :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'simulator'
-   pod 'NetaloCommonSDK', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'medi-hub-v3'
+   pod 'NetaloCommonSDK', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'release-v22'
   
   # Enables Flipper.
   #
@@ -55,4 +56,14 @@ target 'TestReactNativeV4' do
   post_install do |installer|
     react_native_post_install(installer)
   end
+end
+
+
+target 'NotificationExtension' do
+  
+  pod 'RealmSwift', '5.3.5'
+  pod 'Localize-Swift', :git => 'https://github.com/thanhphong-tran/Localize-Swift'
+#  pod 'NetAloNotificationService', :git => 'https://github.com/thanhphong-tran/NetAloNotificationService'
+#  pod 'NetAloNotificationService', :path => '/Users/phong/Desktop/IOS/NetAloNotificationService'
+  
 end

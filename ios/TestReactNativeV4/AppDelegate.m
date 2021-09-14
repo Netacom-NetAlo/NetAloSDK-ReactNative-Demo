@@ -33,7 +33,7 @@ static void InitializeFlipper(UIApplication *application) {
 {
   self = [super init];
   if (self) {
-    _sdk = [[NetaloUISDK alloc] initWithAppId:11 appKey:@"V5WIfKdRfNaqapNSRVCsVCjZ39pWidpq" accountKey:@"11" appGroupIdentifier:@"group.com.xutest02" enviroment:1];
+    _sdk = [[NetaloUISDK alloc] initWithAppId:1 appKey:@"appkey" accountKey:@"11" appGroupIdentifier:@"group.vn.netacom.netalo-dev" enviroment:1];
     [_sdk addWithDelegate:self];
   }
   return self;
@@ -57,6 +57,22 @@ static void InitializeFlipper(UIApplication *application) {
   
   BOOL success = [_sdk application:application didFinishLaunchingWithOptions:launchOptions];
   return success;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  [_sdk application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+  [_sdk applicationDidBecomeActive:application];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+  [_sdk applicationWillTerminate:application];
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application {
+  [_sdk applicationWillResignActive:application];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
@@ -83,11 +99,11 @@ static void InitializeFlipper(UIApplication *application) {
 }
 
 - (void)presentWithViewController:(UIViewController * _Nonnull)viewController {
-  
+  [self.topViewController presentViewController:viewController animated:true completion:NULL];
 }
 
 - (void)pushWithViewController:(UIViewController * _Nonnull)viewController {
-  
+  [self.topViewController presentViewController:viewController animated:true completion:NULL];
 }
 
 - (void)sessionExpired {
@@ -99,7 +115,7 @@ static void InitializeFlipper(UIApplication *application) {
 }
 
 - (UIViewController * _Nullable)topMostViewController {
-  return [UIApplication sharedApplication].keyWindow.rootViewController.presentedViewController;
+  return self.topViewController;
 }
 
 - (void)updateStatusBarWithStyle:(UIStatusBarStyle)style {
@@ -118,5 +134,33 @@ static void InitializeFlipper(UIApplication *application) {
   
 }
 
+- (void)didPressedWithUrl:(NSString * _Nonnull)url {
+  
+}
+
+- (void)didClose {
+  
+}
+
+// MARK: - Utils
+- (UIViewController *)topViewController{
+  return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+}
+
+- (UIViewController *)topViewController:(UIViewController *)rootViewController
+{
+  if ([rootViewController isKindOfClass:[UINavigationController class]]) {
+    UINavigationController *navigationController = (UINavigationController *)rootViewController;
+    return [self topViewController:[navigationController.viewControllers lastObject]];
+  }
+  if ([rootViewController isKindOfClass:[UITabBarController class]]) {
+    UITabBarController *tabController = (UITabBarController *)rootViewController;
+    return [self topViewController:tabController.selectedViewController];
+  }
+  if (rootViewController.presentedViewController) {
+    return [self topViewController:rootViewController.presentedViewController];
+  }
+  return rootViewController;
+}
 
 @end
