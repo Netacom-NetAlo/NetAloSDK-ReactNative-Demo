@@ -34,8 +34,16 @@ const App = () => {
       <View style={styles.container}>
         <Text style={styles.bigtitle}>NetAloSDK Demo React Native</Text>
         <View style={styles.marginTitle} />
+        <TouchableOpacity
+          style={[styles.button]}
+          onPress={() => {
+            NetAloSDK.setDomainLoadAvatarNetAloSdk("URL domain Avatar");
+          }}>
+          <Text style={styles.title}>Init Config URL Avatar</Text>
+        </TouchableOpacity>
         {!shouldShowA && !shouldShowB ? (
           <View>
+            <View style={styles.margin} />
             <Text>NetAloSDK Demo Application, Please select user:</Text>
             <View style={styles.marginButton} />
             <TouchableOpacity
