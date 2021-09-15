@@ -8,7 +8,7 @@
 
 import React, { Component, useState } from "react";
 import { NativeModules } from "react-native";
-// import OneSignal from 'react-native-onesignal';
+import OneSignal from 'react-native-onesignal';
 import {
   StyleSheet,
   Text,
@@ -23,10 +23,11 @@ const { NetAloSDK } = NativeModules;
 
 const App = () => {
   const [text, onChangeText] = React.useState("Useless Text");
+  const [isProduction, setProduction] = useState(true);
   const [shouldShowA, setShouldShowA] = useState(false);
   const [shouldShowB, setShouldShowB] = useState(false);
-  // OneSignal.setLogLevel(6, 0);
-  // OneSignal.setAppId("9ace9559-83bc-4a60-a2df-f297bbf16a42");
+  OneSignal.setLogLevel(6, 0);
+  OneSignal.setAppId("9ace9559-83bc-4a60-a2df-f297bbf16a42");
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -41,8 +42,8 @@ const App = () => {
               style={[styles.button]}
               onPress={() => {
                 NetAloSDK.setUser(
-                  "3096224744861880",
-                  "30800694eff3b59a05141b12ea1345df3e295e68",
+                  isProduction ? "1407374889139870" : "3096224744861880",
+                  isProduction ? "9ce5b30f0a2293b7af08174579fd841b0ab4dc7e" : "30800694eff3b59a05141b12ea1345df3e295e68",
                   "Trần Bảo Ngân",
                   "21070812405364",
                   "XX",
@@ -60,13 +61,13 @@ const App = () => {
               style={[styles.button]}
               onPress={() => {
                 NetAloSDK.setUser(
-                  "3096224744861878",
-                  "653e091fe8c837055d91d8434fb9f5cd70473cf7",
+                  isProduction ? "1407374883553294" : "3096224744861878",
+                  isProduction ? "fe18990723e60652fe0c530e38d4373b9c4fdf5e" : "653e091fe8c837055d91d8434fb9f5cd70473cf7",
                   "Nguyễn Phú Hải Phong",
                   "21070812405325",
                   "XX",
                   "+84969143732",
-                  false
+                  true
                 );
                 setShouldShowA(!shouldShowA);
               }}
@@ -82,7 +83,7 @@ const App = () => {
           <View>
             <TouchableOpacity
               style={[styles.button]}
-              onPress={() => NetAloSDK.showListConversations(false, [2])}
+              onPress={() => NetAloSDK.showListConversations(false, [1, 2, 3])}
             >
               <Text style={styles.title}>List Conversations Create Group</Text>
             </TouchableOpacity>
@@ -105,7 +106,7 @@ const App = () => {
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                "3096224744861880",
+                isProduction ? "1407374889139870" : "3096224744861880",
                 "Trần Bảo Ngân"
               )
             }
@@ -119,7 +120,7 @@ const App = () => {
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                "3096224744861878",
+                isProduction ? "1407374883553294" : "3096224744861878",
                 "Nguyễn Phú Hải Phong"
               )
             }

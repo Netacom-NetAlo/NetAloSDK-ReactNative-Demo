@@ -108,10 +108,10 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public final void setDomainLoadAvatarNetAloSdk() {
+    public final void setDomainLoadAvatarNetAloSdk(String domainAvatar) {
         SettingResponse settingResponse = new SettingResponse();
-        //settingResponse.cdnEndpointSdk = "";
-        NetAloSDK.INSTANCE.initSetting(settingResponse);
+        settingResponse.setCdnEndpointSdk(domainAvatar);
+        NetAloSDK.INSTANCE.initSetting((SettingResponse) settingResponse);
     }
 
     public NetAloSdkModule(@NotNull ReactApplicationContext reactContext) {

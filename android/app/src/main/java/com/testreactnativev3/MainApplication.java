@@ -35,6 +35,7 @@ import kotlin.jvm.internal.Intrinsics;
 public class MainApplication extends Application implements ReactApplication, Configuration.Provider {
     @Inject
     NetAloSdkCore netAloSdkCore;
+    private boolean isProduction = true;
 
     private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
         @Override
@@ -146,16 +147,16 @@ public class MainApplication extends Application implements ReactApplication, Co
 
     public MainApplication() {
         int appId;
-        String appKey;
+        String appKey ;
         String accountKey;
-        if (BuildConfig.DEBUG) {
-            appId = AppID.WELLSPRING_DEV;
-            appKey = AppKey.WELLSPRING_DEV;
-            accountKey = AccountKey.WELLSPRING_DEV;
+        if (isProduction) {
+            appId = 5;
+            appKey ="F9E2CBCC24B2F";
+            accountKey ="5";
         } else {
-            appId = AppID.WELLSPRING_PROD;
-            appKey = AppKey.WELLSPRING_PROD;
-            accountKey = AccountKey.WELLSPRING_PROD;
+            appId = 11;
+            appKey ="V5WIfKdRfNaqapNSRVCsVCjZ39pWidpq";
+            accountKey ="11";
         }
         boolean isSyncContact = true;
         boolean hidePhone = false;

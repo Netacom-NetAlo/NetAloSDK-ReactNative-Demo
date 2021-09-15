@@ -124,7 +124,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'com.google.gms.google-services'
-//apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 apply plugin: 'com.google.firebase.crashlytics'
 
 android {
@@ -216,10 +216,11 @@ dependencies {
         implementation jscFlavor
     }
     implementation("com.facebook.react:react-native:0.64.2"){ force = true }  // From node_modules
-//    implementation 'com.onesignal:OneSignal:4.6.0'
+    //implementation 'com.onesignal:OneSignal:3.16.0'
      //SDK
-    debugImplementation "vn.netacom:NetAloFull-Dev:$sdkNetAlo_version" //(for dev)
-    releaseImplementation "vn.netacom:NetAloFull:$sdkNetAlo_version" //(for production)
+    implementation "vn.netacom:NetAloFull:$sdkNetAlo_version"
+//    debugImplementation "vn.netacom:NetAloFull-Dev:$sdkNetAlo_version" //(for dev)
+//    releaseImplementation "vn.netacom:NetAloFull:$sdkNetAlo_version" //(for production)
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     implementation "androidx.hilt:hilt-work:1.0.0"
