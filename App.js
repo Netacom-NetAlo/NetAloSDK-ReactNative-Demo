@@ -209,4 +209,8 @@ const styles = StyleSheet.create({
   },
 });
 
+function testConfigAvatarDomain() {
+    NetAloSDK.setDomainLoadAvatarNetAloSdk('https://cdn.com/');
+}
+
 export default App;

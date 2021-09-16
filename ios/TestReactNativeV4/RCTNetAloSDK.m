@@ -113,6 +113,11 @@ RCT_EXPORT_METHOD(logOut)
 //  [AppDelegate.sharedInstance.sdk logout];
 }
 
+RCT_EXPORT_METHOD(setDomainLoadAvatarNetAloSdk: (NSString *)domain)
+{
+  [AppDelegate.sharedInstance.sdk setUserProfileUrl:domain];
+}
+
 
 @end
   
