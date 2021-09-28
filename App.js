@@ -38,6 +38,7 @@ const App = () => {
           style={[styles.button]}
           onPress={() => {
             NetAloSDK.setDomainLoadAvatarNetAloSdk("URL domain Avatar");
+            console.log("setDomainLoadAvatarNetAloSdk");
           }}>
           <Text style={styles.title}>Init Config URL Avatar</Text>
         </TouchableOpacity>
