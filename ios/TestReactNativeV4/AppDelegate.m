@@ -29,11 +29,28 @@ static void InitializeFlipper(UIApplication *application) {
   return (AppDelegate *)[UIApplication sharedApplication].delegate;
 }
 
+/*
+ Init Netalo SDKs and config parameters
+ Description enviroment:
+  - testing    = 1
+  - production = 2
+ */
 - (instancetype)init
 {
   self = [super init];
   if (self) {
-    _sdk = [[NetaloUISDK alloc] initWithAppId:1 appKey:@"appkey" accountKey:@"11" appGroupIdentifier:@"group.vn.netacom.netalo-dev" enviroment:1];
+    _sdk = [[NetaloUISDK alloc]
+            initWithAppId:1
+            appKey:@"appkey"
+            accountKey:@"11"
+            appGroupIdentifier:@"group.vn.netacom.netalo-dev"
+            enviroment: 1
+            forceUpdateProfile: YES
+            forceUpdateUserProfileUrl: YES
+            allowAddContactInProfile: NO
+            enableCallsButton: NO
+            enableUserStatusInChat: NO];
+    
     [_sdk addWithDelegate:self];
   }
   return self;

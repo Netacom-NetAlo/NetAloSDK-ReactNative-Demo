@@ -45,7 +45,7 @@ target 'TestReactNativeV4' do
 #  pod 'NetaloCommonSDK', :path => '/Users/phong/Desktop/IOS/NetaloCommonSDK'
 #  pod 'NetAloNotificationService', :path => '/Users/phong/Desktop/IOS/NetAloNotificationService'
 #  pod 'NetaloCommonSDK', :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'simulator'
-   pod 'NetaloCommonSDK', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'release-v23'
+   pod 'NetaloCommonSDK', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'release/release-v25'
   
   # Enables Flipper.
   #
