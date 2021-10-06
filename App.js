@@ -37,7 +37,7 @@ const App = () => {
         <TouchableOpacity
           style={[styles.button]}
           onPress={() => {
-            NetAloSDK.setDomainLoadAvatarNetAloSdk("URL domain Avatar");
+            NetAloSDK.setDomainLoadAvatarNetAloSdk("https://api-uat.wellspringsaigon.edu.vn");
           }}>
           <Text style={styles.title}>Init Config URL Avatar</Text>
         </TouchableOpacity>
@@ -53,7 +53,7 @@ const App = () => {
                   isProduction ? "1407374889139870" : "3096224744861880",
                   isProduction ? "9ce5b30f0a2293b7af08174579fd841b0ab4dc7e" : "30800694eff3b59a05141b12ea1345df3e295e68",
                   "Trần Bảo Ngân",
-                  "21070812405364",
+                  "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
                   "XX",
                   "+84969143732",
                   true
@@ -72,7 +72,7 @@ const App = () => {
                   isProduction ? "1407374883553294" : "3096224744861878",
                   isProduction ? "fe18990723e60652fe0c530e38d4373b9c4fdf5e" : "653e091fe8c837055d91d8434fb9f5cd70473cf7",
                   "Nguyễn Phú Hải Phong",
-                  "21070812405325",
+                  "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
                   "XX",
                   "+84969143732",
                   true
@@ -115,7 +115,10 @@ const App = () => {
             onPress={() =>
               NetAloSDK.openChatWithUser(
                 isProduction ? "1407374889139870" : "3096224744861880",
-                "Trần Bảo Ngân"
+                "Trần Bảo Ngân",
+                "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
+                "toan@gmail.com",
+                "0333332093"
               )
             }
           >
@@ -129,7 +132,10 @@ const App = () => {
             onPress={() =>
               NetAloSDK.openChatWithUser(
                 isProduction ? "1407374883553294" : "3096224744861878",
-                "Nguyễn Phú Hải Phong"
+                "Nguyễn Phú Hải Phong",
+                "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
+                "toan@gmail.com",
+                "0333332093"
               )
             }
           >

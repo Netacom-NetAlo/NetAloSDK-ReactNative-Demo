@@ -78,7 +78,7 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public final void openChatWithUser(@Nullable String userId, @Nullable String username) {
+    public final void openChatWithUser(@Nullable String userId, @Nullable String username, @Nullable String avatar, @Nullable String email, @Nullable String phone) {
         Logger.INSTANCE.e("openChatWithUser=" + userId + ", username=" + username, new Object[0]);
         Context context = this.reactContext.getApplicationContext();
         Intrinsics.checkNotNullExpressionValue(context, "reactContext.applicationContext");
@@ -92,6 +92,15 @@ public final class NetAloSdkModule extends ReactContextBaseJavaModule {
         neUser.setId(userID);
         if (username != null) {
             neUser.setUsername(username);
+        }
+        if (avatar != null) {
+            neUser.setAvatar(avatar);
+        }
+        if (phone != null) {
+            neUser.setPhone(phone);
+        }
+        if (email != null) {
+            neUser.setEmail(email);
         }
         NetAloSDK.INSTANCE.openNetAloSDK(context, (Boolean) false, (ArrayList) null, (NeUser) neUser, (Call) null,
                 (Boolean) false);

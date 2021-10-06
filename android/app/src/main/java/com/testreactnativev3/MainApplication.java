@@ -159,11 +159,11 @@ public class MainApplication extends Application implements ReactApplication, Co
             accountKey ="11";
         }
         boolean isSyncContact = true;
-        boolean hidePhone = false;
-        boolean hideCreateGroup = false;
-        boolean hideAddInfoInChat = false;
-        boolean hideInfoInChat = false;
-        boolean hideCallInChat = false;
+        boolean hidePhone = true;
+        boolean hideCreateGroup = true;
+        boolean hideAddInfoInChat = true;
+        boolean hideInfoInChat = true;
+        boolean hideCallInChat = true;
         String classMainActivity = MainActivity.class.getName();
         this.sdkConfig = new SdkConfig(appId, appKey, accountKey, classMainActivity, isSyncContact, hidePhone, hideCreateGroup, hideAddInfoInChat, hideInfoInChat, hideCallInChat);
         this.sdkTheme = new NeTheme("#00B14F", "#D6F3E2", "#683A00", "#00B14F");
