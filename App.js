@@ -24,6 +24,7 @@ const { NetAloSDK } = NativeModules;
 const App = () => {
   const [text, onChangeText] = React.useState("Useless Text");
   const [isProduction, setProduction] = useState(true);
+  const [isSelect, setIsSelect] = useState(false);
   const [shouldShowA, setShouldShowA] = useState(false);
   const [shouldShowB, setShouldShowB] = useState(false);
   OneSignal.setLogLevel(6, 0);
@@ -32,6 +33,7 @@ const App = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
+        <Button style={[styles.button]} title="Back" onPress={() => { setIsSelect(false) }} />
         <Text style={styles.bigtitle}>NetAloSDK Demo React Native</Text>
         <View style={styles.marginTitle} />
         <TouchableOpacity
@@ -41,7 +43,7 @@ const App = () => {
           }}>
           <Text style={styles.title}>Init Config URL Avatar</Text>
         </TouchableOpacity>
-        {!shouldShowA && !shouldShowB ? (
+        {!isSelect ? (
           <View>
             <View style={styles.margin} />
             <Text>NetAloSDK Demo Application, Please select user:</Text>
@@ -50,44 +52,45 @@ const App = () => {
               style={[styles.button]}
               onPress={() => {
                 NetAloSDK.setUser(
-                  isProduction ? "1407374889139870" : "3096224744861880",
-                  isProduction ? "9ce5b30f0a2293b7af08174579fd841b0ab4dc7e" : "30800694eff3b59a05141b12ea1345df3e295e68",
+                  isProduction ? "3096224744879971" : "3096224744861880",
+                  isProduction ? "dd2afde0c67e1ec276d7110ece8078e95c7417f9" : "30800694eff3b59a05141b12ea1345df3e295e68",
                   "Trần Bảo Ngân",
                   "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
                   "XX",
                   "+84969143732",
                   true
                 );
+                setIsSelect(true);
+                setShouldShowA(false);
                 setShouldShowB(!shouldShowB);
               }}
             >
               <Text style={styles.title}>Set User A</Text>
             </TouchableOpacity>
-
             <View style={styles.margin} />
             <TouchableOpacity
               style={[styles.button]}
               onPress={() => {
                 NetAloSDK.setUser(
-                  isProduction ? "1407374883553294" : "3096224744861878",
-                  isProduction ? "fe18990723e60652fe0c530e38d4373b9c4fdf5e" : "653e091fe8c837055d91d8434fb9f5cd70473cf7",
+                  isProduction ? "3096224744879965" : "3096224744861878",
+                  isProduction ? "2ec9983d9b5b80b462534ffc5c2c50132892f4bc" : "653e091fe8c837055d91d8434fb9f5cd70473cf7",
                   "Nguyễn Phú Hải Phong",
                   "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
                   "XX",
                   "+84969143732",
                   true
                 );
+                setIsSelect(true);
                 setShouldShowA(!shouldShowA);
+                setShouldShowB(false);
               }}
             >
               <Text style={styles.title}>Set User B</Text>
             </TouchableOpacity>
           </View>
         ) : null}
-
         <View style={styles.margin} />
-
-        {shouldShowA || shouldShowB ? (
+        {isSelect && (shouldShowA || shouldShowB) ? (
           <View>
             <TouchableOpacity
               style={[styles.button]}
@@ -98,7 +101,7 @@ const App = () => {
             <View style={styles.margin} />
           </View>
         ) : null}
-        {shouldShowA || shouldShowB ? (
+        {isSelect && (shouldShowA || shouldShowB) ? (
           <View>
             <TouchableOpacity
               style={[styles.button]}
@@ -109,12 +112,12 @@ const App = () => {
             <View style={styles.margin} />
           </View>
         ) : null}
-        {shouldShowA ? (
+        {isSelect && shouldShowA ? (
           <TouchableOpacity
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                isProduction ? "1407374889139870" : "3096224744861880",
+                isProduction ? "3096224744879971" : "3096224744861880",
                 "Trần Bảo Ngân",
                 "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
                 "toan@gmail.com",
@@ -125,39 +128,34 @@ const App = () => {
             <Text style={styles.title}>Open Chat With User</Text>
           </TouchableOpacity>
         ) : null}
-
-        {shouldShowB ? (
+        {isSelect && shouldShowB ? (
           <TouchableOpacity
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                isProduction ? "1407374883553294" : "3096224744861878",
+                isProduction ? "3096224744879965" : "3096224744861878",
                 "Nguyễn Phú Hải Phong",
                 "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
                 "toan@gmail.com",
                 "0333332093"
               )
-            }
-          >
+            } >
             <Text style={styles.title}>Open Chat With User</Text>
           </TouchableOpacity>
         ) : null}
-        <View style={styles.margin} />
-        <TouchableOpacity
-          style={[styles.button]}
-          onPress={() => {
-            NetAloSDK.logOut();
-          }}>
-          <Text style={styles.title}>LogOut</Text>
-        </TouchableOpacity>
-        <View style={styles.margin} />
-        {/* <TouchableOpacity
+        {isSelect && (shouldShowA || shouldShowB) ? (
+          <View>
+            <View style={styles.margin} />
+            <TouchableOpacity
               style={[styles.button]}
               onPress={() => {
-                navigation.goBack()
+                NetAloSDK.logOut();
               }}>
-               <Text style={styles.title}>Back</Text>
-            </TouchableOpacity> */}
+              <Text style={styles.title}>LogOut</Text>
+            </TouchableOpacity>
+            <View style={styles.margin} />
+          </View>
+        ) : null}
       </View>
     </SafeAreaView>
   );
@@ -216,7 +214,7 @@ const styles = StyleSheet.create({
 });
 
 function testConfigAvatarDomain() {
-    NetAloSDK.setDomainLoadAvatarNetAloSdk('https://cdn.com/');
+  NetAloSDK.setDomainLoadAvatarNetAloSdk('https://cdn.com/');
 }
 
 export default App;

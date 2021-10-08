@@ -4,7 +4,7 @@ buildscript {
     ext {
         kotlin_version = '1.5.30'
         hilt_version = '2.38.1'
-        sdkNetAlo_version = '2.0.12'
+        sdkNetAlo_version = '2.0.13'
         buildToolsVersion = "30.0.3"
         minSdkVersion = 23
         compileSdkVersion = 30

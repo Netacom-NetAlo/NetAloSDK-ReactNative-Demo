@@ -35,7 +35,7 @@ import kotlin.jvm.internal.Intrinsics;
 public class MainApplication extends Application implements ReactApplication, Configuration.Provider {
     @Inject
     NetAloSdkCore netAloSdkCore;
-    private boolean isProduction = true;
+    private boolean isProduction = false;
 
     private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
         @Override
@@ -147,16 +147,16 @@ public class MainApplication extends Application implements ReactApplication, Co
 
     public MainApplication() {
         int appId;
-        String appKey ;
+        String appKey;
         String accountKey;
         if (isProduction) {
             appId = 5;
-            appKey ="F9E2CBCC24B2F";
-            accountKey ="5";
+            appKey = "F9E2CBCC24B2F";
+            accountKey = "5";
         } else {
             appId = 11;
-            appKey ="V5WIfKdRfNaqapNSRVCsVCjZ39pWidpq";
-            accountKey ="11";
+            appKey = "V5WIfKdRfNaqapNSRVCsVCjZ39pWidpq";
+            accountKey = "11";
         }
         boolean isSyncContact = true;
         boolean hidePhone = true;
@@ -165,7 +165,8 @@ public class MainApplication extends Application implements ReactApplication, Co
         boolean hideInfoInChat = true;
         boolean hideCallInChat = true;
         String classMainActivity = MainActivity.class.getName();
-        this.sdkConfig = new SdkConfig(appId, appKey, accountKey, classMainActivity, isSyncContact, hidePhone, hideCreateGroup, hideAddInfoInChat, hideInfoInChat, hideCallInChat);
+        this.sdkConfig = new SdkConfig(appId, appKey, accountKey, classMainActivity, isSyncContact, hidePhone,
+                hideCreateGroup, hideAddInfoInChat, hideInfoInChat, hideCallInChat);
         this.sdkTheme = new NeTheme("#00B14F", "#D6F3E2", "#683A00", "#00B14F");
     }
 }
