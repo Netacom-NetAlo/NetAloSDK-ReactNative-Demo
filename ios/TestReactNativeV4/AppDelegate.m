@@ -39,39 +39,55 @@ static void InitializeFlipper(UIApplication *application) {
 {
   self = [super init];
   if (self) {
-    _sdk = [[NetaloUISDK alloc]
-            initWithAppId:1
-            appKey:@"appkey"
-            accountKey:@"11"
-            appGroupIdentifier:@"group.vn.netacom.netalo-dev"
-            enviroment: 1
-            forceUpdateProfile: YES
-            forceUpdateUserProfileUrl: YES
-            allowAddContactInProfile: NO
-            enableCallsButton: NO
-            enableUserStatusInChat: NO];
+    NetaloConfiguration *config = [[NetaloConfiguration alloc]
+                                  initWithEnviroment:1
+                                  appId:1
+                                  appKey:@"appkey"
+                                  accountKey:@"11"
+                                  appGroupIdentifier:@"group.vn.netacom.netalo-dev"
+                                  userProfileUrl:@"abc.vn"
+                                  allowCustomUsername:NO
+                                  forceUpdateProfile:YES
+                                  allowCustomProfile:NO
+                                  allowSetUserProfileUrl:NO
+                                  allowAddContact:YES
+                                  allowBlockContact:YES
+                                  isVideoCallEnable:YES
+                                  isVoiceCallEnable:YES
+                                  allowLocationEnable:YES
+                                  allowTrackingUsingSDK:NO
+                                  enableUserStatusInChat:YES
+                                  allowTrackingBadgeNumber:NO];
     
-    [_sdk addWithDelegate:self];
+   
+    _sdk = [[NetAloFull alloc] initWithConfig:config];
+
   }
+  
   return self;
 }
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"TestReactNativeV4"
-                                            initialProperties:nil];
-
-  rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
-
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
-  [self.window makeKeyAndVisible];
+  __weak typeof(self) weakSelf = self;
   
+  [_sdk initialize:^(BOOL status) {
+    RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+    RCTRootView *rootView = [[RCTRootView alloc]
+                             initWithBridge:bridge
+                             moduleName:@"TestReactNativeV4"
+                             initialProperties:nil];
+    rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
+    [weakSelf.sdk buildSDKModule];
+
+    weakSelf.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UIViewController *rootViewController = [UIViewController new];
+    rootViewController.view = rootView;
+    weakSelf.window.rootViewController = rootViewController;
+    [weakSelf.window makeKeyAndVisible];
+  }];
+
   BOOL success = [_sdk application:application didFinishLaunchingWithOptions:launchOptions];
   return success;
 }
@@ -99,85 +115,6 @@ static void InitializeFlipper(UIApplication *application) {
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
-}
-
-// MARK: - SDK Delegates
-
-- (UIViewController * _Nullable)getConversationViewController {
-  return NULL;
-}
-
-- (void)openContact {
-  
-}
-
-- (void)popTo:(UIViewController * _Nonnull)viewController {
-  
-}
-
-- (void)presentWithViewController:(UIViewController * _Nonnull)viewController {
-  [self.topViewController presentViewController:viewController animated:true completion:NULL];
-}
-
-- (void)pushWithViewController:(UIViewController * _Nonnull)viewController {
-  [self.topViewController presentViewController:viewController animated:true completion:NULL];
-}
-
-- (void)sessionExpired {
-  
-}
-
-- (void)switchToMainScreen {
-  
-}
-
-- (UIViewController * _Nullable)topMostViewController {
-  return self.topViewController;
-}
-
-- (void)updateStatusBarWithStyle:(UIStatusBarStyle)style {
-  
-}
-
-- (void)updateThemeColor:(NSInteger)themeColor {
-  
-}
-
-- (void)userDidLogout {
-  
-}
-
-- (void)checkChatFunctionsWith:(NSString * _Nonnull)userId {
-  
-}
-
-- (void)didPressedWithUrl:(NSString * _Nonnull)url {
-  
-}
-
-- (void)didClose {
-  
-}
-
-// MARK: - Utils
-- (UIViewController *)topViewController{
-  return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
-}
-
-- (UIViewController *)topViewController:(UIViewController *)rootViewController
-{
-  if ([rootViewController isKindOfClass:[UINavigationController class]]) {
-    UINavigationController *navigationController = (UINavigationController *)rootViewController;
-    return [self topViewController:[navigationController.viewControllers lastObject]];
-  }
-  if ([rootViewController isKindOfClass:[UITabBarController class]]) {
-    UITabBarController *tabController = (UITabBarController *)rootViewController;
-    return [self topViewController:tabController.selectedViewController];
-  }
-  if (rootViewController.presentedViewController) {
-    return [self topViewController:rootViewController.presentedViewController];
-  }
-  return rootViewController;
 }
 
 @end

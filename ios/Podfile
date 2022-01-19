@@ -4,7 +4,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 plugin 'cocoapods-user-defined-build-types'
 enable_user_defined_build_types!
 
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 target 'TestReactNativeV4' do
   config = use_native_modules!
@@ -21,18 +21,20 @@ target 'TestReactNativeV4' do
   end
   
   # use_frameworks!
-  
+  pod 'RxSwift', '~> 6.2.0', :build_type => :dynamic_framework
+  pod 'RxCocoa', '~> 6.2.0', :build_type => :dynamic_framework
+  pod 'XCoordinator', '~> 2.0', :build_type => :dynamic_framework
+  pod 'RxGesture', '~> 4.0.2', :build_type => :dynamic_framework
+  pod 'RxRelay', '~> 6.2.0', :build_type => :dynamic_framework
+  pod 'JitsiMeetSDK', :build_type => :dynamic_framework, git: 'https://github.com/Netacom-NetAlo/JitsiSDK-iOS.git', branch: 'dev_1.2'
+  pod 'Resolver', :build_type => :dynamic_framework, git: 'https://github.com/thanhphong-tran/Resolver'
   pod 'MessageKit', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/messagekit'
+  pod 'SwiftLinkPreview', :build_type => :dynamic_framework, :git => 'https://github.com/Netacom-NetAlo/SwiftLinkPreview', branch: 'dev_1.0'
   pod 'Localize-Swift', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/Localize-Swift'
-  pod 'Kingfisher', '~> 5.15', :build_type => :dynamic_framework
-  pod 'ReSwift', '~> 4.1.1', :build_type => :dynamic_framework
-  pod 'ReSwiftThunk', :build_type => :dynamic_framework, git: 'https://github.com/thanhphong-tran/ReSwift-Thunk.git', :tag => '1.1.1'
-  pod 'SwipeTransition', '~> 0.4.2', :build_type => :dynamic_framework
-  pod 'GoogleWebRTC', '~> 1.1', :build_type => :dynamic_framework
+  pod 'Kingfisher', '~> 6.1.1', :build_type => :dynamic_framework
   # Local database
-  pod 'Realm', '5.3.5', :build_type => :dynamic_framework
-  pod 'RealmSwift', '5.3.5', :build_type => :dynamic_framework
-  pod 'Reachability', '~> 3.2', :build_type => :dynamic_framework
+  pod 'RealmSwift', '10.12.0', :build_type => :dynamic_framework
+  pod 'Carbon', '~> 1.0.0-rc.6', :build_type => :dynamic_framework
   # Localization 2.0
   pod 'ZIPFoundation', '~> 0.9', :build_type => :dynamic_framework
   # Secret chat
@@ -42,28 +44,21 @@ target 'TestReactNativeV4' do
   pod 'Curve25519Kit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/Curve25519Kit'
   pod 'GRKOpenSSLFramework', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/GRKOpenSSLFramework', branch: 'mkirk/1.0.2t'
   pod 'Socket.IO-Client-Swift', '14.0.0', :build_type => :dynamic_framework
-#  pod 'NetaloCommonSDK', :path => '/Users/phong/Desktop/IOS/NetaloCommonSDK'
-#  pod 'NetAloNotificationService', :path => '/Users/phong/Desktop/IOS/NetAloNotificationService'
-#  pod 'NetaloCommonSDK', :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'simulator'
-   pod 'NetaloCommonSDK', :build_type => :dynamic_framework, :git => 'https://github.com/thanhphong-tran/NetaloCommonSDK', branch: 'release/release-v25'
   
+  pod 'NetaloSDKs', :build_type => :dynamic_framework, :git => 'http://gitlab.ecdc.vn/hieubui/NetaloSDKs', branch: 'sdk/netalo_objc_1'
+  pod 'NotificationSDK', :build_type => :dynamic_framework, :git => 'http://gitlab.ecdc.vn/hieubui/NotificationSDK', branch: 'dev4'
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
   # use_flipper!()
-
+end
   post_install do |installer|
     react_native_post_install(installer)
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['ENABLE_BITCODE'] = 'NO'
+        config.build_settings['ARCHS'] = 'arm64 x86_64'
+      end
   end
-end
-
-
-target 'NotificationExtension' do
-  
-  pod 'RealmSwift', '5.3.5'
-  pod 'Localize-Swift', :git => 'https://github.com/thanhphong-tran/Localize-Swift'
-#  pod 'NetAloNotificationService', :git => 'https://github.com/thanhphong-tran/NetAloNotificationService'
-#  pod 'NetAloNotificationService', :path => '/Users/phong/Desktop/IOS/NetAloNotificationService'
-  
 end
