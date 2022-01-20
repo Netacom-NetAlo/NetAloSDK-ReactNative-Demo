@@ -22,13 +22,13 @@ import {
 const { NetAloSDK } = NativeModules;
 
 const App = () => {
-  const [text, onChangeText] = React.useState("Useless Text");
+  // const [text, onChangeText] = React.useState("Useless Text");
   const [isProduction, setProduction] = useState(true);
   const [isSelect, setIsSelect] = useState(false);
   const [shouldShowA, setShouldShowA] = useState(false);
   const [shouldShowB, setShouldShowB] = useState(false);
-  OneSignal.setLogLevel(6, 0);
-  OneSignal.setAppId("9ace9559-83bc-4a60-a2df-f297bbf16a42");
+  // OneSignal.setLogLevel(6, 0);
+  // OneSignal.setAppId("9ace9559-83bc-4a60-a2df-f297bbf16a42");
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -39,7 +39,7 @@ const App = () => {
         <TouchableOpacity
           style={[styles.button]}
           onPress={() => {
-            NetAloSDK.setDomainLoadAvatarNetAloSdk("https://api-uat.wellspringsaigon.edu.vn");
+            NetAloSDK.setDomainLoadAvatarNetAloSdk("");
           }}>
           <Text style={styles.title}>Init Config URL Avatar</Text>
         </TouchableOpacity>
@@ -52,12 +52,12 @@ const App = () => {
               style={[styles.button]}
               onPress={() => {
                 NetAloSDK.setUser(
-                  isProduction ? "3096224744879971" : "3096224744861880",
-                  isProduction ? "dd2afde0c67e1ec276d7110ece8078e95c7417f9" : "30800694eff3b59a05141b12ea1345df3e295e68",
-                  "Trần Bảo Ngân",
+                  isProduction ? "281474977694873" : "281474977694873",
+                  isProduction ? "4d5c69aa059d04b761ab6a0eb985b74b7779e40c" : "4d5c69aa059d04b761ab6a0eb985b74b7779e40c",
+                  "T111",
                   "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
                   "XX",
-                  "+84969143732",
+                  "+84101000111",
                   true
                 );
                 setIsSelect(true);
@@ -117,11 +117,11 @@ const App = () => {
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                isProduction ? "3096224744879971" : "3096224744861880",
-                "Trần Bảo Ngân",
-                "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
-                "toan@gmail.com",
-                "0333332093"
+                "281474977724836",
+                "G20",
+                "pFz0jhyeUzamyXcRx2dXkWUYApADL3Hcr2y6_nrCEV0qhblqq1Rzn4wyMxu2nqnH",
+                "aaa@gmail.com",
+                "+84101000020"
               )
             }
           >
@@ -133,11 +133,11 @@ const App = () => {
             style={[styles.button]}
             onPress={() =>
               NetAloSDK.openChatWithUser(
-                isProduction ? "3096224744879965" : "3096224744861878",
-                "Nguyễn Phú Hải Phong",
-                "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
-                "toan@gmail.com",
-                "0333332093"
+                "281474977724836",
+                "G20",
+                "pFz0jhyeUzamyXcRx2dXkWUYApADL3Hcr2y6_nrCEV0qhblqq1Rzn4wyMxu2nqnH",
+                "aaa@gmail.com",
+                "+84101000020"
               )
             } >
             <Text style={styles.title}>Open Chat With User</Text>
