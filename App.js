@@ -39,7 +39,7 @@ const App = () => {
         <TouchableOpacity
           style={[styles.button]}
           onPress={() => {
-            NetAloSDK.setDomainLoadAvatarNetAloSdk("");
+            NetAloSDK.setDomainLoadAvatarNetAloSdk("your_cdn");
           }}>
           <Text style={styles.title}>Init Config URL Avatar</Text>
         </TouchableOpacity>
@@ -52,8 +52,8 @@ const App = () => {
               style={[styles.button]}
               onPress={() => {
                 NetAloSDK.setUser(
-                  isProduction ? "281474977694873" : "281474977694873",
-                  isProduction ? "4d5c69aa059d04b761ab6a0eb985b74b7779e40c" : "4d5c69aa059d04b761ab6a0eb985b74b7779e40c",
+                  "281474977694873",
+                  "4d5c69aa059d04b761ab6a0eb985b74b7779e40c" ,
                   "T111",
                   "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
                   "XX",
@@ -72,12 +72,12 @@ const App = () => {
               style={[styles.button]}
               onPress={() => {
                 NetAloSDK.setUser(
-                  isProduction ? "3096224744879965" : "3096224744861878",
-                  isProduction ? "2ec9983d9b5b80b462534ffc5c2c50132892f4bc" : "653e091fe8c837055d91d8434fb9f5cd70473cf7",
-                  "Nguyễn Phú Hải Phong",
+                  "281474977694873",
+                  "4d5c69aa059d04b761ab6a0eb985b74b7779e40c" ,
+                  "T111",
                   "Attachments/f91f5ef2-fa03-4d73-b549-60b6ca3c90a0_332CF1D4-8681-4EAF-9EC7-5BB42E8AF5EF.jpg",
                   "XX",
-                  "+84969143732",
+                  "+84101000111",
                   true
                 );
                 setIsSelect(true);

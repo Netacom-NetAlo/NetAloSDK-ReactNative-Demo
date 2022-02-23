@@ -45,8 +45,8 @@ target 'TestReactNativeV4' do
   pod 'GRKOpenSSLFramework', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/GRKOpenSSLFramework', branch: 'mkirk/1.0.2t'
   pod 'Socket.IO-Client-Swift', '14.0.0', :build_type => :dynamic_framework
   
-  pod 'NetaloSDKs', :build_type => :dynamic_framework, :git => 'http://gitlab.ecdc.vn/hieubui/NetaloSDKs', branch: 'sdk/netalo_objc_1'
-  pod 'NotificationSDK', :build_type => :dynamic_framework, :git => 'http://gitlab.ecdc.vn/hieubui/NotificationSDK', branch: 'sdk/netalo_objc_1'
+  pod 'NetaloSDKs', :build_type => :dynamic_framework, :git => 'http://gitlab.ecdc.vn/hieubui/NetaloSDKs', branch: 'vnd/sdk_main_v1_objc'
+  pod 'NotificationSDK', :build_type => :dynamic_framework, :git => 'http://gitlab.ecdc.vn/hieubui/NotificationSDK', branch: 'vnd/sdk_noti_v1_objc'
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
@@ -66,7 +66,7 @@ target 'NotificationExtension' do
   pod 'Curve25519Kit', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/Curve25519Kit'
   pod 'GRKOpenSSLFramework', :build_type => :dynamic_framework, git: 'https://github.com/signalapp/GRKOpenSSLFramework', branch: 'mkirk/1.0.2t'
   pod 'Socket.IO-Client-Swift', '14.0.0', :build_type => :dynamic_framework
-  pod 'NotificationSDK', :build_type => :dynamic_framework, :git => 'http://gitlab.ecdc.vn/hieubui/NotificationSDK', branch: 'sdk/netalo_objc_1'
+  pod 'NotificationSDK', :build_type => :dynamic_framework, :git => 'http://gitlab.ecdc.vn/hieubui/NotificationSDK', branch: 'vnd/sdk_noti_v1_objc'
   pod 'RxSwift', '~> 6.2.0', :build_type => :dynamic_framework
   pod 'RxCocoa', '~> 6.2.0', :build_type => :dynamic_framework
   pod 'RxRelay', '~> 6.2.0', :build_type => :dynamic_framework

@@ -57,10 +57,16 @@ static void InitializeFlipper(UIApplication *application) {
                                   allowBlockContact:YES
                                   isVideoCallEnable:YES
                                   isVoiceCallEnable:YES
+                                  isHiddenSecretChat: YES
                                   allowLocationEnable:YES
                                   allowTrackingUsingSDK:NO
                                   enableUserStatusInChat:YES
-                                  allowTrackingBadgeNumber:NO];
+                                  allowTrackingBadgeNumber:NO
+                                  isHiddenEditProfile: NO
+                                  allowEditContact: NO
+                                  searchByLike:TRUE
+                                  allowReferralCode: NO
+                                  allowReplaceCountrycode: NO];
    
     _sdk = [[NetAloFull alloc] initWithConfig:config];
 
@@ -74,7 +80,7 @@ static void InitializeFlipper(UIApplication *application) {
 {
   __weak typeof(self) weakSelf = self;
   
-  [_sdk initialize:^(BOOL status) {
+  [_sdk initializeObjc:^(BOOL status) {
     [weakSelf.sdk buildSDKModule];
     
     RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];

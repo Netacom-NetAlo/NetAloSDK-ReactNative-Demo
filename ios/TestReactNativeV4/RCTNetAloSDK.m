@@ -66,12 +66,12 @@ RCT_EXPORT_METHOD(showChatWithUser: (NSString *) userId
                   phoneNumber: (NSString *)phoneNumber)
 {
   [AppDelegate.sharedInstance.sdk
+   
    showChatUserWith:[userId integerValue]
    phone:phoneNumber
    fullName:fullName
    email:NULL
-   profileUrl:avatarId
-   createWithGroupType:3];
+   profileUrl:avatarId];
 }
 
 RCT_EXPORT_METHOD(showChatWithPhone: (NSString *) phoneNumber)
@@ -90,8 +90,7 @@ RCT_EXPORT_METHOD(openChatWithUser: (NSString *)userId
    phone:phoneNumber
    fullName:fullName
    email:email
-   profileUrl:avatarId
-   createWithGroupType:3];
+   profileUrl:avatarId];
 }
 
 RCT_EXPORT_METHOD(logOut)
