@@ -20,7 +20,6 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-project.xcworkspace
 
 # Android/IntelliJ
 #
@@ -40,6 +39,7 @@ yarn-error.log
 buck-out/
 \.buckd/
 *.keystore
+!debug.keystore
 
 # fastlane
 #
@@ -56,14 +56,4 @@ buck-out/
 *.jsbundle
 
 # CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-ios/Pods/
-ios/build/
-ios/Podfile.lock
-ios/TestReactNativeV3.xcworkspace/*
-ios/TestReactNativeV3.xcodeproj/xcshareddata/*
-
+/ios/Pods/
