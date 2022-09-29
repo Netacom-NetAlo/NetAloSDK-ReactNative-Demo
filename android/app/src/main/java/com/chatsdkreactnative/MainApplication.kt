@@ -5,18 +5,20 @@ import android.content.Context
 import androidx.work.Configuration
 import com.facebook.react.*
 import com.facebook.soloader.SoLoader
-import com.netacom.full.ui.sdk.NetAloSDK
-import com.netacom.full.ui.sdk.NetAloSdkCore
-import com.netacom.lite.entity.ui.theme.NeTheme
-import com.netacom.lite.sdk.AccountKey
-import com.netacom.lite.sdk.AppID
-import com.netacom.lite.sdk.AppKey
-import com.netacom.lite.sdk.SdkConfig
+import com.asia.sdkui.ui.sdk.NetAloSDK
+import com.asia.sdkui.ui.sdk.NetAloSdkCore
+import com.asia.sdkcore.entity.ui.theme.NeTheme
+import com.asia.sdkcore.sdk.AccountKey
+import com.asia.sdkcore.sdk.AppID
+import com.asia.sdkcore.sdk.AppKey
+import com.asia.sdkcore.sdk.SdkConfig
 import dagger.hilt.android.HiltAndroidApp
 import io.realm.Realm
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 import java.lang.reflect.InvocationTargetException
 import javax.inject.Inject
 
+@ObsoleteCoroutinesApi
 @HiltAndroidApp
 class MainApplication : Application(), ReactApplication, Configuration.Provider {
     @Inject
