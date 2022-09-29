@@ -25,14 +25,14 @@
              <TouchableOpacity
                style={[styles.button]}
                onPress={() => {
-                 NetAloSDK.setUser(
-                   "2814749772832149",
-                   "1c5632c5dcdc339fe7478f1bd4a3f3216827ade3",
-                   "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
-                   "XX",
-                   "+84969143732",
-                   false
-                 );
+                //  NetAloSDK.setUser(
+                //    "2814749772832149",
+                //    "1c5632c5dcdc339fe7478f1bd4a3f3216827ade3",
+                //    "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
+                //    "XX",
+                //    "+84969143732",
+                //    false
+                //  );
                  setShouldShowB(!shouldShowB);
                }}
              >
