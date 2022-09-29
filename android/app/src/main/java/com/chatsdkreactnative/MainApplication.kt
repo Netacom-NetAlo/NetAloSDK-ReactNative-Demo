@@ -3,15 +3,19 @@ package com.chatsdkreactnative
 import android.app.Application
 import android.content.Context
 import androidx.work.Configuration
-import com.facebook.react.*
-import com.facebook.soloader.SoLoader
-import com.asia.sdkui.ui.sdk.NetAloSDK
-import com.asia.sdkui.ui.sdk.NetAloSdkCore
 import com.asia.sdkcore.entity.ui.theme.NeTheme
 import com.asia.sdkcore.sdk.AccountKey
 import com.asia.sdkcore.sdk.AppID
 import com.asia.sdkcore.sdk.AppKey
 import com.asia.sdkcore.sdk.SdkConfig
+import com.asia.sdkui.ui.sdk.NetAloSDK
+import com.asia.sdkui.ui.sdk.NetAloSdkCore
+import com.facebook.react.PackageList
+import com.facebook.react.ReactApplication
+import com.facebook.react.ReactInstanceManager
+import com.facebook.react.ReactNativeHost
+import com.facebook.react.ReactPackage
+import com.facebook.soloader.SoLoader
 import dagger.hilt.android.HiltAndroidApp
 import io.realm.Realm
 import kotlinx.coroutines.ObsoleteCoroutinesApi
@@ -29,13 +33,12 @@ class MainApplication : Application(), ReactApplication, Configuration.Provider 
             return BuildConfig.DEBUG
         }
 
-        override fun getPackages(): List<ReactPackage> {
-            // Packages that cannot be autolinked yet can be added manually here, for example:
-            val packages: MutableList<ReactPackage> = PackageList(this).packages
-            // Packages that cannot be autolinked yet can be added manually here, for example:
-            packages.add(NetAloSdkPackage())
-            return PackageList(this).packages
-        }
+        override fun getPackages(): List<ReactPackage> =
+            PackageList(this).packages.apply {
+                // Packages that cannot be autolinked yet can be added manually here, for example:
+                // packages.add(new MyReactNativePackage());
+                add(NetAloSdkPackage())
+            }
 
         override fun getJSMainModuleName(): String {
             return "index"
@@ -87,9 +90,9 @@ class MainApplication : Application(), ReactApplication, Configuration.Provider 
             .build()
 
     private val sdkConfig = SdkConfig(
-        appId = AppID.NETALO_DEV,
-        appKey = AppKey.NETALO_DEV,
-        accountKey = AccountKey.NETALO_DEV,
+        appId = AppID.NETALO_PROD,
+        appKey = AppKey.NETALO_PROD,
+        accountKey = AccountKey.NETALO_PROD,
         isSyncContact = false,
         hidePhone = false,
         hideCreateGroup = false,

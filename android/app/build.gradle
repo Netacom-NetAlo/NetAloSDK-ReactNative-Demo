@@ -227,8 +227,9 @@ dependencies {
         implementation jscFlavor
     }
       //SDK
-    debugImplementation "vn.netacom:NetAloFull-Dev:$sdkNetAlo_version" //(for dev)
-    releaseImplementation "vn.netacom:NetAloFull:$sdkNetAlo_version" //(for production)
+    //debugImplementation "vn.netacom:NetAloFull-Dev:$sdkNetAlo_version" //(for dev)
+    //releaseImplementation "vn.netacom:NetAloFull:$sdkNetAlo_version" //(for production)
+    implementation "vn.netacom:NetAloFull:$sdkNetAlo_version" //(for production)
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     implementation "androidx.hilt:hilt-work:1.0.0"

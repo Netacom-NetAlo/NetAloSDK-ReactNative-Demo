@@ -1,13 +1,14 @@
 package com.chatsdkreactnative
 
+import com.asia.sdkbase.logger.Logger
+import com.asia.sdkcore.entity.ui.user.NeUser
+import com.asia.sdkui.ui.sdk.NetAloSDK
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
-import com.asia.sdkbase.logger.Logger
-import com.asia.sdkui.ui.sdk.NetAloSDK
-import com.asia.sdkcore.entity.ui.user.NeUser
 
 class NetAloSdkModule internal constructor(private var reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
+
     override fun getName(): String {
         return "NetAloSDK"
     }
