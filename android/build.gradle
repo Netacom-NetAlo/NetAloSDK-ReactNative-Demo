@@ -2,15 +2,15 @@
 
 buildscript {
     ext {
-        buildToolsVersion = "32.0.0"
+        buildToolsVersion = "30.0.0"
         minSdkVersion = 23
-        compileSdkVersion = 32
-        targetSdkVersion = 32
+        compileSdkVersion = 30
+        targetSdkVersion = 30
         ndkVersion = "20.1.5948944"
         //SDK
         kotlin_version = '1.6.10'
         hilt_version = '2.42'
-        sdkNetAlo_version = '2.5.3'
+        sdkNetAlo_version = '3.1.32'
     }
     repositories {
         google()
@@ -42,5 +42,15 @@ allprojects {
         maven { url 'https://www.jitpack.io' }
         maven { url 'https://plugins.gradle.org/m2/' }
         maven { url 'https://github.com/Netacom-NetAlo/NetaloSDKs-Android/raw/main/NetAloSDK' }
+    }
+}
+subprojects {
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.android.support'
+                    && !details.requested.name.contains('multidex') ) {
+                details.useVersion "26.1.0"
+            }
+        }
     }
 }
