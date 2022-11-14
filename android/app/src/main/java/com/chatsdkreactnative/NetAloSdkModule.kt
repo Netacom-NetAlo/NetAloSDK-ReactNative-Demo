@@ -38,7 +38,6 @@ class NetAloSdkModule internal constructor(private var reactContext: ReactApplic
 
     @ReactMethod
     fun initFirebase(remoteMessage: RemoteMessage) {
-        Logger.e("remoteMessage=$remoteMessage")
         NetAloSDK.initFirebase(context = reactContext.applicationContext, remoteMessage = remoteMessage)
     }
 }

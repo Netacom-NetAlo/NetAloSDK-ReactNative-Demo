@@ -13,6 +13,8 @@
  const App = () => {
    const [shouldShowA, setShouldShowA] = useState(false);
    const [shouldShowB, setShouldShowB] = useState(false);
+   // Call Kafka add line in firebase Listener.
+   // NetAloSDK.initFirebase(remoteMessage);
    return (
      <SafeAreaView style={{ flex: 1 }}>
        <View style={styles.container}>
