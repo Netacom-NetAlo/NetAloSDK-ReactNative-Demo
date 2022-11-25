@@ -1,29 +1,74 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '11.0'
+plugin 'cocoapods-user-defined-build-types'
+enable_user_defined_build_types!
+
+platform :ios, '12.0'
+
+# ======================================GROUP PODS==========================================
+def netalo_pods
+  pod 'NetacomSDKs', :build_type => :dynamic_framework, :git => 'https://github.com/Netacom-NetAlo/NetaloSDKs-iOS', tag: '10.0.1'
+  noti_netalo_pods
+end
+
+def noti_netalo_pods
+  pod 'NotificationSDK', :build_type => :dynamic_framework, :git => 'https://github.com/Netacom-NetAlo/NotiSDKs-iOS', tag: '10.0.1'
+  pod 'WebRTC', :build_type => :dynamic_framework, :git => 'https://github.com/Netacom-NetAlo/WebRTC-iOS'
+end
+
+def resolver
+  pod 'Resolver', :build_type => :dynamic_framework, :git => 'https://github.com/Netacom-NetAlo/Resolver-iOS'
+end
+
+# ======================================TARGET PODS==========================================
+def app_pods
+  pod 'MessageKit', :build_type => :dynamic_framework, :git => 'https://github.com/Netacom-NetAlo/Messagekit-iOS'
+  resolver
+  netalo_pods
+end
 
 target 'ChatSDKReactNative' do
   config = use_native_modules!
 
   use_react_native!(
     :path => config[:reactNativePath],
-    # to enable hermes on iOS, change `false` to `true` and then install pods
+    # to enable hermes on iOS, change false to true and then install pods
     :hermes_enabled => false
   )
 
-  target 'ChatSDKReactNativeTests' do
-    inherit! :complete
-    # Pods for testing
-  end
+target 'ChatSDKReactNativeTests' do
+  inherit! :complete
+  # Pods for testing
+end
+  
+  # use_frameworks!
+  app_pods
 
   # Enables Flipper.
-  #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
-  use_flipper!()
+  # use_flipper!()
+end
 
-  post_install do |installer|
-    react_native_post_install(installer)
+# ============================Notification Extension================================
+def app_notification_pods
+  resolver
+  noti_netalo_pods
+ 
+end
+
+ target 'NotificationExtension' do
+   app_notification_pods
+ end
+
+post_install do |installer|
+  react_native_post_install(installer)
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+      config.build_settings['ARCHS'] = 'arm64 x86_64'
+      config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+    end
   end
 end

@@ -28,12 +28,12 @@
                style={[styles.button]}
                onPress={() => {
                  NetAloSDK.setUser(
-                   "2814749772832149",
-                   "1c5632c5dcdc339fe7478f1bd4a3f3216827ade3",
-                   "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
-                   "XX",
-                   "+84969143732",
-                   false
+                   "2814749772862138",
+                   "03116c99cd1998514b1d890db0240cbe90e4RRQ8",
+                   "g899",
+                   "C9KpMehqESpH-06uiPEQaGOlt1D2vmvZwtz5Trva8XJKgzXBMUIfGQkN8-MpNaEP",
+                   "",
+                   "+84101000899"
                  );
                  setShouldShowB(!shouldShowB);
                }}
@@ -46,12 +46,12 @@
                style={[styles.button]}
                onPress={() => {
                  NetAloSDK.setUser(
-                   "2814749772693227",
+                   "2814749772862138",
+                   "test",
                    "777011f136b8edb137e92694b671190c174d8d7a",
                    "a6hIg_MRfWKSPeAXkkxAjA6coypt1y6j1KtJAkbd9k_E2w46wZuU4mbhNvA4Uzdl",
                    "XX",
-                   "+84969143732",
-                   true
+                   "+84969143732"
                  );
                  setShouldShowA(!shouldShowA);
                }}
@@ -79,10 +79,13 @@
            <TouchableOpacity
              style={[styles.button]}
              onPress={() =>
-               NetAloSDK.openChatWithUser(
-                 "2814749772832149",
-                 "1c5632c5dcdc339fe7478f1bd4a3f3216827ade3"
-               )
+              NetAloSDK.openChatWithUser(
+                "281474977724836",
+                "G20",
+                "pFz0jhyeUzamyXcRx2dXkWUYApADL3Hcr2y6_nrCEV0qhblqq1Rzn4wyMxu2nqnH",
+                "aaa@gmail.com",
+                "+84101000020"
+              )
              }
            >
              <Text style={styles.title}>Open Chat With User</Text>
@@ -93,10 +96,13 @@
            <TouchableOpacity
              style={[styles.button]}
              onPress={() =>
-               NetAloSDK.openChatWithUser(
-                 "2814749772693227",
-                 "777011f136b8edb137e92694b671190c174d8d7a"
-               )
+              NetAloSDK.openChatWithUser(
+                "2814749767106688",
+                "Đỗ Hoàng Sơn",
+                "uSkFCts87gwjHe0w5RONtjAyR9mSyo4BEXo9WwY3WIgvAZKferpvOAxM7ZwDq2LG",
+                "",
+                "+84906600132"
+              )
              }
            >
              <Text style={styles.title}>Open Chat With User</Text>

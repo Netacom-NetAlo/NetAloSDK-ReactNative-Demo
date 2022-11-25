@@ -11,7 +11,15 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		397029B2E4EF878038181E5E /* libPods-NotificationExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F932F5B687255A19412B8B03 /* libPods-NotificationExtension.a */; };
+		6A2802AD9CFC82E7C08C62F4 /* libPods-ChatSDKReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC43F4F54475B1EE0655C8B /* libPods-ChatSDKReactNative.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		93056F531F4CCE5E063A9441 /* libPods-ChatSDKReactNative-ChatSDKReactNativeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F42DC504B69D791C16202468 /* libPods-ChatSDKReactNative-ChatSDKReactNativeTests.a */; };
+		FE69B6812930AA9800C8D549 /* RCTNetAloSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = FE69B6802930AA9800C8D549 /* RCTNetAloSDK.m */; };
+		FE69B68D2930BC5D00C8D549 /* NotificationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FE69B6862930BC5D00C8D549 /* NotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FE69B6992930BCAA00C8D549 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69B6942930BCAA00C8D549 /* Injection.swift */; };
+		FE69B69B2930BCAA00C8D549 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69B6952930BCAA00C8D549 /* BuildConfig.swift */; };
+		FE69B69D2930BCAA00C8D549 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69B6962930BCAA00C8D549 /* NotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,20 +30,59 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = ChatSDKReactNative;
 		};
+		FE69B68B2930BC5D00C8D549 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE69B6852930BC5D00C8D549;
+			remoteInfo = NotificationExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FE69B6912930BC5D00C8D549 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FE69B68D2930BC5D00C8D549 /* NotificationExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00E356EE1AD99517003FC87E /* ChatSDKReactNativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatSDKReactNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ChatSDKReactNativeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatSDKReactNativeTests.m; sourceTree = "<group>"; };
+		0DB62E79C9CF4E8EC63589D7 /* Pods-ChatSDKReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSDKReactNative.debug.xcconfig"; path = "Target Support Files/Pods-ChatSDKReactNative/Pods-ChatSDKReactNative.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ChatSDKReactNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatSDKReactNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ChatSDKReactNative/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ChatSDKReactNative/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ChatSDKReactNative/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ChatSDKReactNative/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ChatSDKReactNative/main.m; sourceTree = "<group>"; };
+		603104FF69F15775E1E9601D /* Pods-ChatSDKReactNative-ChatSDKReactNativeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSDKReactNative-ChatSDKReactNativeTests.debug.xcconfig"; path = "Target Support Files/Pods-ChatSDKReactNative-ChatSDKReactNativeTests/Pods-ChatSDKReactNative-ChatSDKReactNativeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6172C7DE0E11E76F6C4708EB /* Pods-ChatSDKReactNative-ChatSDKReactNativeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSDKReactNative-ChatSDKReactNativeTests.release.xcconfig"; path = "Target Support Files/Pods-ChatSDKReactNative-ChatSDKReactNativeTests/Pods-ChatSDKReactNative-ChatSDKReactNativeTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ChatSDKReactNative/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8648F82033EA8FAF6CD1E030 /* Pods-NotificationExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationExtension.debug.xcconfig"; path = "Target Support Files/Pods-NotificationExtension/Pods-NotificationExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		8D556F463342ED98785FC9BC /* Pods-ChatSDKReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSDKReactNative.release.xcconfig"; path = "Target Support Files/Pods-ChatSDKReactNative/Pods-ChatSDKReactNative.release.xcconfig"; sourceTree = "<group>"; };
+		92558A765FF1B9B9ADCAD498 /* Pods-NotificationExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationExtension.release.xcconfig"; path = "Target Support Files/Pods-NotificationExtension/Pods-NotificationExtension.release.xcconfig"; sourceTree = "<group>"; };
+		EBC43F4F54475B1EE0655C8B /* libPods-ChatSDKReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatSDKReactNative.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F42DC504B69D791C16202468 /* libPods-ChatSDKReactNative-ChatSDKReactNativeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatSDKReactNative-ChatSDKReactNativeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F932F5B687255A19412B8B03 /* libPods-NotificationExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotificationExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE69B67E2930961400C8D549 /* ChatSDKReactNative.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ChatSDKReactNative.entitlements; path = ChatSDKReactNative/ChatSDKReactNative.entitlements; sourceTree = "<group>"; };
+		FE69B67F2930AA9800C8D549 /* RCTNetAloSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTNetAloSDK.h; path = ChatSDKReactNative/RCTNetAloSDK.h; sourceTree = "<group>"; };
+		FE69B6802930AA9800C8D549 /* RCTNetAloSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTNetAloSDK.m; path = ChatSDKReactNative/RCTNetAloSDK.m; sourceTree = "<group>"; };
+		FE69B6862930BC5D00C8D549 /* NotificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE69B6942930BCAA00C8D549 /* Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
+		FE69B6952930BCAA00C8D549 /* BuildConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
+		FE69B6962930BCAA00C8D549 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		FE69B6972930BCAA00C8D549 /* NotificationExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = NotificationExtension.entitlements; sourceTree = "<group>"; };
+		FE69B6A12930BD9C00C8D549 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93056F531F4CCE5E063A9441 /* libPods-ChatSDKReactNative-ChatSDKReactNativeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +98,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A2802AD9CFC82E7C08C62F4 /* libPods-ChatSDKReactNative.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE69B6832930BC5D00C8D549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				397029B2E4EF878038181E5E /* libPods-NotificationExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +133,9 @@
 		13B07FAE1A68108700A75B9A /* ChatSDKReactNative */ = {
 			isa = PBXGroup;
 			children = (
+				FE69B67F2930AA9800C8D549 /* RCTNetAloSDK.h */,
+				FE69B6802930AA9800C8D549 /* RCTNetAloSDK.m */,
+				FE69B67E2930961400C8D549 /* ChatSDKReactNative.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -90,25 +150,35 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				EBC43F4F54475B1EE0655C8B /* libPods-ChatSDKReactNative.a */,
+				F42DC504B69D791C16202468 /* libPods-ChatSDKReactNative-ChatSDKReactNativeTests.a */,
+				F932F5B687255A19412B8B03 /* libPods-NotificationExtension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+		803ACA39AA6447BB2EC51797 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				0DB62E79C9CF4E8EC63589D7 /* Pods-ChatSDKReactNative.debug.xcconfig */,
+				8D556F463342ED98785FC9BC /* Pods-ChatSDKReactNative.release.xcconfig */,
+				603104FF69F15775E1E9601D /* Pods-ChatSDKReactNative-ChatSDKReactNativeTests.debug.xcconfig */,
+				6172C7DE0E11E76F6C4708EB /* Pods-ChatSDKReactNative-ChatSDKReactNativeTests.release.xcconfig */,
+				8648F82033EA8FAF6CD1E030 /* Pods-NotificationExtension.debug.xcconfig */,
+				92558A765FF1B9B9ADCAD498 /* Pods-NotificationExtension.release.xcconfig */,
 			);
-			name = Libraries;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
 				13B07FAE1A68108700A75B9A /* ChatSDKReactNative */,
-				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ChatSDKReactNativeTests */,
+				FE69B6922930BCAA00C8D549 /* NotificationExtension */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				803ACA39AA6447BB2EC51797 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -120,8 +190,29 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* ChatSDKReactNative.app */,
 				00E356EE1AD99517003FC87E /* ChatSDKReactNativeTests.xctest */,
+				FE69B6862930BC5D00C8D549 /* NotificationExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FE69B6922930BCAA00C8D549 /* NotificationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				FE69B6932930BCAA00C8D549 /* Config */,
+				FE69B6972930BCAA00C8D549 /* NotificationExtension.entitlements */,
+			);
+			path = NotificationExtension;
+			sourceTree = "<group>";
+		};
+		FE69B6932930BCAA00C8D549 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				FE69B6A12930BD9C00C8D549 /* Info.plist */,
+				FE69B6942930BCAA00C8D549 /* Injection.swift */,
+				FE69B6952930BCAA00C8D549 /* BuildConfig.swift */,
+				FE69B6962930BCAA00C8D549 /* NotificationService.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ChatSDKReactNativeTests" */;
 			buildPhases = (
+				655CBB71B0F278C3A58201A0 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				DCD301E3A8F0EB4FF920D53A /* [CP] Embed Pods Frameworks */,
+				3487445E56BD3EBAB1414026 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,20 +243,43 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ChatSDKReactNative" */;
 			buildPhases = (
+				0581B2F3F633F79AA68AE6B1 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				27D307E9AC89938A329EF8A4 /* [CP] Embed Pods Frameworks */,
+				F7EE842933FB3D45741E053A /* [CP] Copy Pods Resources */,
+				FE69B6912930BC5D00C8D549 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FE69B68C2930BC5D00C8D549 /* PBXTargetDependency */,
 			);
 			name = ChatSDKReactNative;
 			productName = ChatSDKReactNative;
 			productReference = 13B07F961A680F5B00A75B9A /* ChatSDKReactNative.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FE69B6852930BC5D00C8D549 /* NotificationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE69B68E2930BC5D00C8D549 /* Build configuration list for PBXNativeTarget "NotificationExtension" */;
+			buildPhases = (
+				C846FF8A4B3114BBAB34B4BB /* [CP] Check Pods Manifest.lock */,
+				FE69B6822930BC5D00C8D549 /* Sources */,
+				FE69B6832930BC5D00C8D549 /* Frameworks */,
+				FE69B6842930BC5D00C8D549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationExtension;
+			productName = NotificationExtension;
+			productReference = FE69B6862930BC5D00C8D549 /* NotificationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -170,6 +287,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -178,6 +296,9 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
+					};
+					FE69B6852930BC5D00C8D549 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
@@ -196,6 +317,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* ChatSDKReactNative */,
 				00E356ED1AD99517003FC87E /* ChatSDKReactNativeTests */,
+				FE69B6852930BC5D00C8D549 /* NotificationExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -217,6 +339,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE69B6842930BC5D00C8D549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -233,6 +362,140 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		0581B2F3F633F79AA68AE6B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChatSDKReactNative-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27D307E9AC89938A329EF8A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative/Pods-ChatSDKReactNative-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative/Pods-ChatSDKReactNative-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative/Pods-ChatSDKReactNative-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3487445E56BD3EBAB1414026 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative-ChatSDKReactNativeTests/Pods-ChatSDKReactNative-ChatSDKReactNativeTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative-ChatSDKReactNativeTests/Pods-ChatSDKReactNative-ChatSDKReactNativeTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative-ChatSDKReactNativeTests/Pods-ChatSDKReactNative-ChatSDKReactNativeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		655CBB71B0F278C3A58201A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChatSDKReactNative-ChatSDKReactNativeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C846FF8A4B3114BBAB34B4BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NotificationExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCD301E3A8F0EB4FF920D53A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative-ChatSDKReactNativeTests/Pods-ChatSDKReactNative-ChatSDKReactNativeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative-ChatSDKReactNativeTests/Pods-ChatSDKReactNative-ChatSDKReactNativeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative-ChatSDKReactNativeTests/Pods-ChatSDKReactNative-ChatSDKReactNativeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7EE842933FB3D45741E053A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative/Pods-ChatSDKReactNative-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative/Pods-ChatSDKReactNative-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSDKReactNative/Pods-ChatSDKReactNative-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -269,7 +532,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				FE69B6812930AA9800C8D549 /* RCTNetAloSDK.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE69B6822930BC5D00C8D549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE69B69B2930BCAA00C8D549 /* BuildConfig.swift in Sources */,
+				FE69B69D2930BCAA00C8D549 /* NotificationService.swift in Sources */,
+				FE69B6992930BCAA00C8D549 /* Injection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,11 +555,17 @@
 			target = 13B07F861A680F5B00A75B9A /* ChatSDKReactNative */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
+		FE69B68C2930BC5D00C8D549 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE69B6852930BC5D00C8D549 /* NotificationExtension */;
+			targetProxy = FE69B68B2930BC5D00C8D549 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 603104FF69F15775E1E9601D /* Pods-ChatSDKReactNative-ChatSDKReactNativeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -312,6 +592,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6172C7DE0E11E76F6C4708EB /* Pods-ChatSDKReactNative-ChatSDKReactNativeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -335,48 +616,84 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DB62E79C9CF4E8EC63589D7 /* Pods-ChatSDKReactNative.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = ChatSDKReactNative/ChatSDKReactNative.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 16;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZCBUP6ND93;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ChatSDKReactNative/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.6;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = hura.asia;
 				PRODUCT_NAME = ChatSDKReactNative;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = huraprod;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D556F463342ED98785FC9BC /* Pods-ChatSDKReactNative.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = ChatSDKReactNative/ChatSDKReactNative.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 16;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZCBUP6ND93;
 				INFOPLIST_FILE = ChatSDKReactNative/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.6;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = hura.asia;
 				PRODUCT_NAME = ChatSDKReactNative;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = huraprod;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -414,6 +731,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -435,8 +753,8 @@
 					"$(inherited)",
 				);
 				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -478,6 +796,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -492,13 +811,107 @@
 					"$(inherited)",
 				);
 				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE69B68F2930BC5D00C8D549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8648F82033EA8FAF6CD1E030 /* Pods-NotificationExtension.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = NotificationExtension/NotificationExtension.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 16;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZCBUP6ND93;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationExtension/Config/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = hura.asia.noti;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "huraprod-noti";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE69B6902930BC5D00C8D549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92558A765FF1B9B9ADCAD498 /* Pods-NotificationExtension.release.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = NotificationExtension/NotificationExtension.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 16;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZCBUP6ND93;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationExtension/Config/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.6;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = hura.asia.noti;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "huraprod-noti";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -528,6 +941,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE69B68E2930BC5D00C8D549 /* Build configuration list for PBXNativeTarget "NotificationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE69B68F2930BC5D00C8D549 /* Debug */,
+				FE69B6902930BC5D00C8D549 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
